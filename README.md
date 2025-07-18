@@ -40,3 +40,7 @@ Go to Grafana → Dashboards → Import → Upload `dashboard/huawei-grafana.jso
 
 You may need to adjust the data source to point to your Prometheus instance.
 
+![alt text](image.png)
+
+![alt text](image-1.png)
+
