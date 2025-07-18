@@ -1,0 +1,2913 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  public_v1:
+    community: prometheus
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 1
+  public_v2:
+    community: prometheus
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+modules:
+  huawei:
+    walk:
+      - 1.3.6.1.4.1.2011.2.251.20.1
+      - 1.3.6.1.4.1.2011.2.251.20.2.1.1
+      - 1.3.6.1.4.1.2011.2.251.22.16500
+      - 1.3.6.1.4.1.2011.2.91.10.1
+      - 1.3.6.1.4.1.2011.2.91.10.2.1.0.1
+      - 1.3.6.1.4.1.2011.2.91.10.4.1
+      - 1.3.6.1.4.1.2011.2.91.9.1
+      - 1.3.6.1.4.1.34774.4.1.1
+      - 1.3.6.1.4.1.34774.4.1.19.9.1
+      - 1.3.6.1.4.1.34774.4.1.2.1
+      - 1.3.6.1.4.1.34774.4.1.21
+      - 1.3.6.1.4.1.34774.4.1.23.4
+      - 1.3.6.1.4.1.34774.4.1.23.5
+      - 1.3.6.1.4.1.34774.4.1.3.1
+      - 1.3.6.1.4.1.34774.4.1.4.2
+  #  ignore_duplicates: true
+    metrics:
+    - name: hwStorageActiveAlarmInfoNodeCode
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.1
+      type: OctetString
+      help: ID of the node where an alarm occurs. - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.1
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwStorageActiveAlarmInfoLocationInfo
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.2
+      type: DisplayString
+      help: Alarm location information - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.2
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwStorageActiveAlarmInfoRestoreAdvice
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.3
+      type: DisplayString
+      help: Alarm handling suggestion. - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.3
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwStorageActiveAlarmInfoTitle
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.4
+      type: DisplayString
+      help: Alarm information title. - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.4
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwStorageActiveAlarmInfoType
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.5
+      type: gauge
+      help: 'Alarm type: 2-EquipmentAlarm - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.5'
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+      enum_values:
+        2: equipmentFault
+    - name: hwStorageActiveAlarmInfoLevel
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.6
+      type: gauge
+      help: 'Alarm severity of I2000 network management software: 1-criticalAlarm
+        2-majorAlarm 3-minorAlarm 4-warningAlarm - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.6'
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+      enum_values:
+        1: criticalAlarm
+        2: majorAlarm
+        3: minorAlarm
+        4: warningAlarm
+    - name: hwStorageActiveAlarmInfoAlarmID
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.7
+      type: gauge
+      help: Alarm ID of I2000 network management software. - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.7
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwStorageActiveAlarmInfoOccurTime
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.8
+      type: OctetString
+      help: Time when an alarm was generated. - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.8
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwStorageActiveAlarmInfoSerialNo
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.9
+      type: gauge
+      help: Alarm serial number(SN). - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.9
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwStorageActiveAlarmInfoAddtionInfo
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.10
+      type: OctetString
+      help: Alarm cause. - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.10
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwStorageActiveAlarmInfoCategory
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.11
+      type: gauge
+      help: 'Alarm Category: 1-faultAlarm 2-resumeAlarm 3-eventAlarm - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.11'
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+      enum_values:
+        1: faultAlarm
+        2: resumeAlarm
+        3: eventAlarm
+    - name: hwStorageActiveAlarmInfoLocalAlarmID
+      oid: 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.12
+      type: counter
+      help: Original Alarm ID - 1.3.6.1.4.1.2011.2.251.20.1.1.1.1.12
+      indexes:
+      - labelname: hwStorageActiveAlarmInfoNodeCode
+        type: OctetString
+      - labelname: hwStorageActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwInfoPortIBID
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.1
+      type: OctetString
+      help: ID of an InfiniBand port, and it's the table index. - 1.3.6.1.4.1.2011.2.251.22.16500.1.1
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBParentType
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.2
+      type: gauge
+      help: Parent type of an InfiniBand port - 1.3.6.1.4.1.2011.2.251.22.16500.1.2
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBParentID
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.3
+      type: OctetString
+      help: Parent ID of an InfiniBand port. - 1.3.6.1.4.1.2011.2.251.22.16500.1.3
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBLocation
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.4
+      type: OctetString
+      help: Location of an InfiniBand port. - 1.3.6.1.4.1.2011.2.251.22.16500.1.4
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBHealthStatus
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.5
+      type: gauge
+      help: Health status of an InfiniBand port - 1.3.6.1.4.1.2011.2.251.22.16500.1.5
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBRunningStatus
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.6
+      type: gauge
+      help: Operating status of an InfiniBand port - 1.3.6.1.4.1.2011.2.251.22.16500.1.6
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBType
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.7
+      type: gauge
+      help: Logical type of an InfiniBand port - 1.3.6.1.4.1.2011.2.251.22.16500.1.7
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBWorkingRate
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.8
+      type: gauge
+      help: 'Working rate of an InfiniBand port (unit: Mbit/s) - 1.3.6.1.4.1.2011.2.251.22.16500.1.8'
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBWWN
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.9
+      type: OctetString
+      help: WWN of an InfiniBand port. - 1.3.6.1.4.1.2011.2.251.22.16500.1.9
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBRole
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.10
+      type: gauge
+      help: Role of an InfiniBand port - 1.3.6.1.4.1.2011.2.251.22.16500.1.10
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBSymbolError
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.11
+      type: gauge
+      help: Symbol error statistics of an InfiniBand port. - 1.3.6.1.4.1.2011.2.251.22.16500.1.11
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBLinkErrorRecovery
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.12
+      type: gauge
+      help: Statistics of rectifying an InfiniBand port's connection errors. - 1.3.6.1.4.1.2011.2.251.22.16500.1.12
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBReceiveErrors
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.13
+      type: gauge
+      help: InfiniBand port receiving errors. - 1.3.6.1.4.1.2011.2.251.22.16500.1.13
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBRemoteReceiveErrors
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.14
+      type: gauge
+      help: InfiniBand port remotely receiving errors. - 1.3.6.1.4.1.2011.2.251.22.16500.1.14
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBReceiveTransmitErrors
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.15
+      type: gauge
+      help: InfiniBand port receiving and forwarding errors. - 1.3.6.1.4.1.2011.2.251.22.16500.1.15
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBNotSendPacakges
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.16
+      type: gauge
+      help: Count of packets that are not sent by an InfiniBand port. - 1.3.6.1.4.1.2011.2.251.22.16500.1.16
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBReceiveConstraintErrors
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.17
+      type: gauge
+      help: InfiniBand port receiving constraint errors. - 1.3.6.1.4.1.2011.2.251.22.16500.1.17
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBLinkErrors
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.18
+      type: gauge
+      help: Connection error of an InfiniBand port. - 1.3.6.1.4.1.2011.2.251.22.16500.1.18
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBBufferOverrunErrors
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.19
+      type: gauge
+      help: Buffer overflow error of an InfiniBand port. - 1.3.6.1.4.1.2011.2.251.22.16500.1.19
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBStartTime
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.20
+      type: OctetString
+      help: Start time of an InfiniBand port. - 1.3.6.1.4.1.2011.2.251.22.16500.1.20
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwInfoPortIBMaxSpeed
+      oid: 1.3.6.1.4.1.2011.2.251.22.16500.1.21
+      type: gauge
+      help: 'Maximum rate of an InfiniBand port (unit: Mbit/s). - 1.3.6.1.4.1.2011.2.251.22.16500.1.21'
+      indexes:
+      - labelname: hwInfoPortIBID
+        type: OctetString
+    - name: hwIsmActiveAlarmInfoNodeCode
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.1
+      type: DisplayString
+      help: ID of the node where an alarm occurs. - 1.3.6.1.4.1.2011.2.91.10.1.1.1.1
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmActiveAlarmInfoLocationInfo
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.2
+      type: DisplayString
+      help: Alarm location information - 1.3.6.1.4.1.2011.2.91.10.1.1.1.2
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmActiveAlarmInfoRestoreAdvice
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.3
+      type: DisplayString
+      help: Alarm handling suggestion. - 1.3.6.1.4.1.2011.2.91.10.1.1.1.3
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmActiveAlarmInfoTitle
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.4
+      type: DisplayString
+      help: Alarm information title. - 1.3.6.1.4.1.2011.2.91.10.1.1.1.4
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmActiveAlarmInfoType
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.5
+      type: gauge
+      help: 'Alarm type: 2-EquipmentAlarm - 1.3.6.1.4.1.2011.2.91.10.1.1.1.5'
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+      enum_values:
+        2: equipmentFault
+    - name: hwIsmActiveAlarmInfoLevel
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.6
+      type: gauge
+      help: 'Alarm severity of I2000 network management software: 1-criticalAlarm
+        2-majorAlarm 3-minorAlarm 4-warningAlarm - 1.3.6.1.4.1.2011.2.91.10.1.1.1.6'
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+      enum_values:
+        1: criticalAlarm
+        2: majorAlarm
+        3: minorAlarm
+        4: warningAlarm
+    - name: hwIsmActiveAlarmInfoAlarmID
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.7
+      type: gauge
+      help: Alarm ID of I2000 network management software. - 1.3.6.1.4.1.2011.2.91.10.1.1.1.7
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmActiveAlarmInfoOccurTime
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.8
+      type: DateAndTime
+      help: Time when an alarm was generated. - 1.3.6.1.4.1.2011.2.91.10.1.1.1.8
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmActiveAlarmInfoSerialNo
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.9
+      type: gauge
+      help: Alarm serial number (SN). - 1.3.6.1.4.1.2011.2.91.10.1.1.1.9
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmActiveAlarmInfoAddtionInfo
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.10
+      type: OctetString
+      help: Alarm cause. - 1.3.6.1.4.1.2011.2.91.10.1.1.1.10
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmActiveAlarmInfoCategory
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.11
+      type: gauge
+      help: 'Alarm category: 1 - 1.3.6.1.4.1.2011.2.91.10.1.1.1.11'
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+      enum_values:
+        1: faultAlarm
+        2: resumeAlarm
+        3: eventAlarm
+    - name: hwIsmActiveAlarmInfoLocalAlarmID
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.1.1.12
+      type: counter
+      help: Original alarm ID. - 1.3.6.1.4.1.2011.2.91.10.1.1.1.12
+      indexes:
+      - labelname: hwIsmActiveAlarmInfoNodeCode
+        type: DisplayString
+      - labelname: hwIsmActiveAlarmInfoSerialNo
+        type: gauge
+    - name: hwIsmClearedAlarmConfirm
+      oid: 1.3.6.1.4.1.2011.2.91.10.1.2
+      type: gauge
+      help: Confirmation of an active alarm - 1.3.6.1.4.1.2011.2.91.10.1.2
+    - name: hwIsmTrapTargetAddrIPAddr
+      oid: 1.3.6.1.4.1.2011.2.91.10.4.1.1.1
+      type: InetAddressIPv4
+      help: Destination address for trap forwarding - 1.3.6.1.4.1.2011.2.91.10.4.1.1.1
+      indexes:
+      - labelname: hwIsmTrapTargetAddrIndex
+        type: OctetString
+    - name: hwIsmTrapTargetAddrPort
+      oid: 1.3.6.1.4.1.2011.2.91.10.4.1.1.2
+      type: gauge
+      help: Port of the destination address for trap forwarding - 1.3.6.1.4.1.2011.2.91.10.4.1.1.2
+      indexes:
+      - labelname: hwIsmTrapTargetAddrIndex
+        type: OctetString
+    - name: hwIsmTrapTargetAddrRowStatus
+      oid: 1.3.6.1.4.1.2011.2.91.10.4.1.1.3
+      type: gauge
+      help: Row status - 1.3.6.1.4.1.2011.2.91.10.4.1.1.3
+      indexes:
+      - labelname: hwIsmTrapTargetAddrIndex
+        type: OctetString
+      enum_values:
+        1: active
+        2: notInService
+        3: notReady
+        4: createAndGo
+        5: createAndWait
+        6: destroy
+    - name: hwIsmTrapTargetAddrIndex
+      oid: 1.3.6.1.4.1.2011.2.91.10.4.1.1.4
+      type: OctetString
+      help: Index of the destination address for trap forwarding - 1.3.6.1.4.1.2011.2.91.10.4.1.1.4
+      indexes:
+      - labelname: hwIsmTrapTargetAddrIndex
+        type: OctetString
+    - name: hwIsmTrapTargetAddrTrapVer
+      oid: 1.3.6.1.4.1.2011.2.91.10.4.1.1.5
+      type: gauge
+      help: Version of the destination address for trap forwarding - 1.3.6.1.4.1.2011.2.91.10.4.1.1.5
+      indexes:
+      - labelname: hwIsmTrapTargetAddrIndex
+        type: OctetString
+    - name: hwIsmTrapTargetAddrIPAddrNew
+      oid: 1.3.6.1.4.1.2011.2.91.10.4.1.1.6
+      type: OctetString
+      help: New destination address for trap forwarding - 1.3.6.1.4.1.2011.2.91.10.4.1.1.6
+      indexes:
+      - labelname: hwIsmTrapTargetAddrIndex
+        type: OctetString
+    - name: hwIsmTrapTargetAddrTrapType
+      oid: 1.3.6.1.4.1.2011.2.91.10.4.1.1.7
+      type: gauge
+      help: Type of the destination address for trap forwarding - 1.3.6.1.4.1.2011.2.91.10.4.1.1.7
+      indexes:
+      - labelname: hwIsmTrapTargetAddrIndex
+        type: OctetString
+    - name: hwIsmTrapTargetAddrUSMUserName
+      oid: 1.3.6.1.4.1.2011.2.91.10.4.1.1.8
+      type: OctetString
+      help: USM user name of the destination address for trap forwarding - 1.3.6.1.4.1.2011.2.91.10.4.1.1.8
+      indexes:
+      - labelname: hwIsmTrapTargetAddrIndex
+        type: OctetString
+    - name: hwIsmNENodeCode
+      oid: 1.3.6.1.4.1.2011.2.91.9.1.1.1.1
+      type: DisplayString
+      help: ID of an NE node. - 1.3.6.1.4.1.2011.2.91.9.1.1.1.1
+      indexes:
+      - labelname: hwIsmNENodeCode
+        type: DisplayString
+    - name: hwIsmNENodeType
+      oid: 1.3.6.1.4.1.2011.2.91.9.1.1.1.2
+      type: gauge
+      help: Type of an NE node. - 1.3.6.1.4.1.2011.2.91.9.1.1.1.2
+      indexes:
+      - labelname: hwIsmNENodeCode
+        type: DisplayString
+    - name: hwIsmNENodeWorkingMode
+      oid: 1.3.6.1.4.1.2011.2.91.9.1.1.1.3
+      type: gauge
+      help: Working mode of an NE node, not used currently. - 1.3.6.1.4.1.2011.2.91.9.1.1.1.3
+      indexes:
+      - labelname: hwIsmNENodeCode
+        type: DisplayString
+      enum_values:
+        1: mode1
+        2: mode2
+        3: mode3
+        4: mode4
+    - name: hwIsmNENodeIPAddress
+      oid: 1.3.6.1.4.1.2011.2.91.9.1.1.1.4
+      type: InetAddressIPv4
+      help: IP address of an NE node, not used currently. - 1.3.6.1.4.1.2011.2.91.9.1.1.1.4
+      indexes:
+      - labelname: hwIsmNENodeCode
+        type: DisplayString
+    - name: hwIsmNENodeContextName
+      oid: 1.3.6.1.4.1.2011.2.91.9.1.1.1.5
+      type: DisplayString
+      help: Name of the context. - 1.3.6.1.4.1.2011.2.91.9.1.1.1.5
+      indexes:
+      - labelname: hwIsmNENodeCode
+        type: DisplayString
+    - name: hwIsmNENodeContextEngineID
+      oid: 1.3.6.1.4.1.2011.2.91.9.1.1.1.6
+      type: DisplayString
+      help: Engine ID of the context, not used currently. - 1.3.6.1.4.1.2011.2.91.9.1.1.1.6
+      indexes:
+      - labelname: hwIsmNENodeCode
+        type: DisplayString
+    - name: hwIsmNENodeClusterName
+      oid: 1.3.6.1.4.1.2011.2.91.9.1.1.1.7
+      type: DisplayString
+      help: Name of the NE cluster, not used currently. - 1.3.6.1.4.1.2011.2.91.9.1.1.1.7
+      indexes:
+      - labelname: hwIsmNENodeCode
+        type: DisplayString
+    - name: hwIsmNENodeRunningStatus
+      oid: 1.3.6.1.4.1.2011.2.91.9.1.1.1.8
+      type: gauge
+      help: 'Running status of an NE: 1 - 1.3.6.1.4.1.2011.2.91.9.1.1.1.8'
+      indexes:
+      - labelname: hwIsmNENodeCode
+        type: DisplayString
+      enum_values:
+        1: admin
+        2: freedom
+    - name: deviceId
+      oid: 1.3.6.1.4.1.34774.4.1.1.1
+      type: DisplayString
+      help: Device serial number, namely,unique identifier of the device. - 1.3.6.1.4.1.34774.4.1.1.1
+    - name: deviceType
+      oid: 1.3.6.1.4.1.34774.4.1.1.2
+      type: gauge
+      help: Type of the storage device - 1.3.6.1.4.1.34774.4.1.1.2
+    - name: status
+      oid: 1.3.6.1.4.1.34774.4.1.1.3
+      type: gauge
+      help: System operating status - 1.3.6.1.4.1.34774.4.1.1.3
+    - name: usedCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.1.4
+      type: counter
+      help: Used capacity of the storage device - 1.3.6.1.4.1.34774.4.1.1.4
+    - name: totalCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.1.5
+      type: counter
+      help: Total capacity of the storage device - 1.3.6.1.4.1.34774.4.1.1.5
+    - name: version
+      oid: 1.3.6.1.4.1.34774.4.1.1.6
+      type: DisplayString
+      help: Device version. - 1.3.6.1.4.1.34774.4.1.1.6
+    - name: hwStorageCacheID
+      oid: 1.3.6.1.4.1.34774.4.1.19.9.1.1.1
+      type: gauge
+      help: Controller node ID - 1.3.6.1.4.1.34774.4.1.19.9.1.1.1
+      indexes:
+      - labelname: hwStorageCacheID
+        type: gauge
+    - name: hwStorageCacheTotalCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.19.9.1.1.2
+      type: gauge
+      help: 'Cache size (unit: MB). - 1.3.6.1.4.1.34774.4.1.19.9.1.1.2'
+      indexes:
+      - labelname: hwStorageCacheID
+        type: gauge
+    - name: hwStorageCacheHighWaterLevel
+      oid: 1.3.6.1.4.1.34774.4.1.19.9.1.1.3
+      type: gauge
+      help: Cache high water level. - 1.3.6.1.4.1.34774.4.1.19.9.1.1.3
+      indexes:
+      - labelname: hwStorageCacheID
+        type: gauge
+    - name: hwStorageCacheLowWaterLevel
+      oid: 1.3.6.1.4.1.34774.4.1.19.9.1.1.4
+      type: gauge
+      help: Cache low water level. - 1.3.6.1.4.1.34774.4.1.19.9.1.1.4
+      indexes:
+      - labelname: hwStorageCacheID
+        type: gauge
+    - name: hwStorageCacheRowStatus
+      oid: 1.3.6.1.4.1.34774.4.1.19.9.1.1.5
+      type: gauge
+      help: Row status - 1.3.6.1.4.1.34774.4.1.19.9.1.1.5
+      indexes:
+      - labelname: hwStorageCacheID
+        type: gauge
+      enum_values:
+        1: active
+        2: notInService
+        3: notReady
+        4: createAndGo
+        5: createAndWait
+        6: destroy
+    - name: forwardAddrIndex
+      oid: 1.3.6.1.4.1.34774.4.1.2.1.1.1
+      type: OctetString
+      help: Index to the alarm forwarding address - 1.3.6.1.4.1.34774.4.1.2.1.1.1
+      indexes:
+      - labelname: forwardAddrIndex
+        type: OctetString
+    - name: forwardAddrIP
+      oid: 1.3.6.1.4.1.34774.4.1.2.1.1.2
+      type: InetAddressIPv4
+      help: IP address to which the alarm is forwarded - 1.3.6.1.4.1.34774.4.1.2.1.1.2
+      indexes:
+      - labelname: forwardAddrIndex
+        type: OctetString
+    - name: forwardAddrPort
+      oid: 1.3.6.1.4.1.34774.4.1.2.1.1.3
+      type: gauge
+      help: Port of the alarm forwarding address - 1.3.6.1.4.1.34774.4.1.2.1.1.3
+      indexes:
+      - labelname: forwardAddrIndex
+        type: OctetString
+    - name: forwardAddrTrapVer
+      oid: 1.3.6.1.4.1.34774.4.1.2.1.1.4
+      type: gauge
+      help: Version of the alarm forwarding address - 1.3.6.1.4.1.34774.4.1.2.1.1.4
+      indexes:
+      - labelname: forwardAddrIndex
+        type: OctetString
+    - name: forwardAddrRowStatus
+      oid: 1.3.6.1.4.1.34774.4.1.2.1.1.5
+      type: gauge
+      help: Row status value - 1.3.6.1.4.1.34774.4.1.2.1.1.5
+      indexes:
+      - labelname: forwardAddrIndex
+        type: OctetString
+      enum_values:
+        1: active
+        2: notInService
+        3: notReady
+        4: createAndGo
+        5: createAndWait
+        6: destroy
+    - name: forwardAddrIPNew
+      oid: 1.3.6.1.4.1.34774.4.1.2.1.1.6
+      type: OctetString
+      help: New alarm forwarding address - 1.3.6.1.4.1.34774.4.1.2.1.1.6
+      indexes:
+      - labelname: forwardAddrIndex
+        type: OctetString
+    - name: forwardAddrTrapType
+      oid: 1.3.6.1.4.1.34774.4.1.2.1.1.7
+      type: gauge
+      help: Type of the alarm forwarding address - 1.3.6.1.4.1.34774.4.1.2.1.1.7
+      indexes:
+      - labelname: forwardAddrIndex
+        type: OctetString
+    - name: forwardAddrUSMUserName
+      oid: 1.3.6.1.4.1.34774.4.1.2.1.1.8
+      type: OctetString
+      help: USM user name of the destination address for trap forwarding - 1.3.6.1.4.1.34774.4.1.2.1.1.8
+      indexes:
+      - labelname: forwardAddrIndex
+        type: OctetString
+    - name: hwPerformanceSwitch
+      oid: 1.3.6.1.4.1.34774.4.1.21.1
+      type: gauge
+      help: Performance statistics switch - 1.3.6.1.4.1.34774.4.1.21.1
+    - name: hwPerfNodeIfIndex
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.1
+      type: gauge
+      help: Controller node ID - 1.3.6.1.4.1.34774.4.1.21.3.1.1
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeCPUUsage
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.2
+      type: gauge
+      help: 'CPU usage of the node (unit: %). - 1.3.6.1.4.1.34774.4.1.21.3.1.2'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeAvgCacheUsage
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.3
+      type: gauge
+      help: 'Average cache usage of the node (unit: %). - 1.3.6.1.4.1.34774.4.1.21.3.1.3'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeDelay
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.4
+      type: gauge
+      help: 'Average I/O latency of the node (unit: ms). - 1.3.6.1.4.1.34774.4.1.21.3.1.4'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeTotalIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.5
+      type: gauge
+      help: 'Total IOPS of the node (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.3.1.5'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeReadIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.6
+      type: gauge
+      help: 'Read IOPS of the node (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.3.1.6'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeWriteIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.7
+      type: gauge
+      help: 'Write IOPS of the node (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.3.1.7'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeTotalTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.8
+      type: gauge
+      help: 'Total bandwidth for the node (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.3.1.8'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeReadTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.9
+      type: gauge
+      help: 'Read bandwidth for the node (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.3.1.9'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeWriteTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.10
+      type: gauge
+      help: 'Write bandwidth for the node (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.3.1.10'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeFileBandwidth
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.11
+      type: counter
+      help: 'Node file bandwidth (unit: byte/s). - 1.3.6.1.4.1.34774.4.1.21.3.1.11'
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfNodeFileOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.3.1.12
+      type: counter
+      help: Node file OPS - 1.3.6.1.4.1.34774.4.1.21.3.1.12
+      indexes:
+      - labelname: hwPerfNodeIfIndex
+        type: gauge
+    - name: hwPerfLunID
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.1
+      type: gauge
+      help: LUN ID. - 1.3.6.1.4.1.34774.4.1.21.4.1.1
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunHitRate
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.2
+      type: gauge
+      help: 'I/O hit ratio of the LUN (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.2'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunTotalIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.3
+      type: gauge
+      help: 'Current IOPS of the LUN (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.3'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunReadIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.4
+      type: gauge
+      help: 'Current read IOPS of the LUN (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.4'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunWriteIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.5
+      type: gauge
+      help: 'Current write IOPS of the LUN (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.5'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunTotalTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.6
+      type: gauge
+      help: 'Current total bandwidth for the LUN (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.6'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunReadTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.7
+      type: gauge
+      help: 'Current read bandwidth for the LUN (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.7'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunWriteTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.8
+      type: gauge
+      help: 'Current write bandwidth for the LUN (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.8'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunReadIORate
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.9
+      type: gauge
+      help: 'Read I/O ratio of the LUN (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.9'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunWriteIORate
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.10
+      type: gauge
+      help: 'Write I/O ratio of the LUN (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.10'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunMaxTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.11
+      type: gauge
+      help: 'Maximum bandwidth for the LUN (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.11'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunMaxIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.12
+      type: gauge
+      help: 'Maximum IOPS of the LUN (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.4.1.12'
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunAverageIOResponseTime
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.13
+      type: gauge
+      help: Average IO response time (unit:us). - 1.3.6.1.4.1.34774.4.1.21.4.1.13
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunMaxIOResponseTime
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.14
+      type: gauge
+      help: Maximum IO response time (unit:us). - 1.3.6.1.4.1.34774.4.1.21.4.1.14
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunAverageReadIOLatency
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.15
+      type: gauge
+      help: Average read IO response time (unit:us). - 1.3.6.1.4.1.34774.4.1.21.4.1.15
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfLunAverageWriteIOLatency
+      oid: 1.3.6.1.4.1.34774.4.1.21.4.1.16
+      type: gauge
+      help: Average write IO response time (unit:us). - 1.3.6.1.4.1.34774.4.1.21.4.1.16
+      indexes:
+      - labelname: hwPerfLunID
+        type: gauge
+    - name: hwPerfPortIfIndex
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.1
+      type: gauge
+      help: Index to the port. - 1.3.6.1.4.1.34774.4.1.21.5.1.1
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortDelay
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.2
+      type: gauge
+      help: 'I/O latency of the port (unit: ms). - 1.3.6.1.4.1.34774.4.1.21.5.1.2'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortTotalIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.3
+      type: gauge
+      help: 'IOPS of the port (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.5.1.3'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortReadIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.4
+      type: gauge
+      help: 'Read IOPS of the port (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.5.1.4'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortWriteIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.5
+      type: gauge
+      help: 'Write IOPS of the port (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.5.1.5'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortTotalTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.6
+      type: gauge
+      help: 'Total bandwidth for the port (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.5.1.6'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortReadTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.7
+      type: gauge
+      help: 'Read bandwidth for the port (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.5.1.7'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortWriteTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.8
+      type: gauge
+      help: 'Write bandwidth for the port (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.5.1.8'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortMaxTraffic
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.9
+      type: gauge
+      help: 'Maximum bandwidth for the port (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.5.1.9'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortMaxIOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.10
+      type: gauge
+      help: 'Maximum IOPS of the port (unit: IO/s). - 1.3.6.1.4.1.34774.4.1.21.5.1.10'
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfPortLocation
+      oid: 1.3.6.1.4.1.34774.4.1.21.5.1.11
+      type: DisplayString
+      help: Location of the port. - 1.3.6.1.4.1.34774.4.1.21.5.1.11
+      indexes:
+      - labelname: hwPerfPortIfIndex
+        type: gauge
+      - labelname: hwPerfPortObjectId  
+        type: DisplayString 
+    - name: hwPerfCacheID
+      oid: 1.3.6.1.4.1.34774.4.1.21.7.1.1
+      type: gauge
+      help: Controller node ID - 1.3.6.1.4.1.34774.4.1.21.7.1.1
+      indexes:
+      - labelname: hwPerfCacheID
+        type: gauge
+    - name: hwPerfCacheReadUtilization
+      oid: 1.3.6.1.4.1.34774.4.1.21.7.1.2
+      type: gauge
+      help: 'Cache read usage (unit: %). - 1.3.6.1.4.1.34774.4.1.21.7.1.2'
+      indexes:
+      - labelname: hwPerfCacheID
+        type: gauge
+    - name: hwPerfCacheWriteUtilization
+      oid: 1.3.6.1.4.1.34774.4.1.21.7.1.3
+      type: gauge
+      help: 'Cache write usage (unit: %). - 1.3.6.1.4.1.34774.4.1.21.7.1.3'
+      indexes:
+      - labelname: hwPerfCacheID
+        type: gauge
+    - name: hwPerfCacheMirrorWriteUtilization
+      oid: 1.3.6.1.4.1.34774.4.1.21.7.1.4
+      type: gauge
+      help: 'Cache mirror write usage (unit: %). - 1.3.6.1.4.1.34774.4.1.21.7.1.4'
+      indexes:
+      - labelname: hwPerfCacheID
+        type: gauge
+    - name: hwPerfCacheHitRatio
+      oid: 1.3.6.1.4.1.34774.4.1.21.7.1.5
+      type: gauge
+      help: Cache hit ratio. - 1.3.6.1.4.1.34774.4.1.21.7.1.5
+      indexes:
+      - labelname: hwPerfCacheID
+        type: gauge
+    - name: hwPerfControllerNFSV3ID
+      oid: 1.3.6.1.4.1.34774.4.1.21.10.1.1
+      type: OctetString
+      help: Controller ID. - 1.3.6.1.4.1.34774.4.1.21.10.1.1
+      indexes:
+      - labelname: hwPerfControllerNFSV3ID
+        type: OctetString
+    - name: hwPerfControllerNFSV3OPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.10.1.2
+      type: counter
+      help: NFSv3 OPS of the controller. - 1.3.6.1.4.1.34774.4.1.21.10.1.2
+      indexes:
+      - labelname: hwPerfControllerNFSV3ID
+        type: OctetString
+    - name: hwPerfControllerNFSV3Bps
+      oid: 1.3.6.1.4.1.34774.4.1.21.10.1.3
+      type: counter
+      help: 'NFSv3 throughput of the controller (unit: byte/s). - 1.3.6.1.4.1.34774.4.1.21.10.1.3'
+      indexes:
+      - labelname: hwPerfControllerNFSV3ID
+        type: OctetString
+    - name: hwPerfControllerNFSV4ID
+      oid: 1.3.6.1.4.1.34774.4.1.21.11.1.1
+      type: OctetString
+      help: Controller ID. - 1.3.6.1.4.1.34774.4.1.21.11.1.1
+      indexes:
+      - labelname: hwPerfControllerNFSV4ID
+        type: OctetString
+    - name: hwPerfControllerNFSV4OPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.11.1.2
+      type: counter
+      help: NFSv4 OPS of the controller. - 1.3.6.1.4.1.34774.4.1.21.11.1.2
+      indexes:
+      - labelname: hwPerfControllerNFSV4ID
+        type: OctetString
+    - name: hwPerfControllerNFSV4Bps
+      oid: 1.3.6.1.4.1.34774.4.1.21.11.1.3
+      type: counter
+      help: 'NFSv4 throughput of the controller (unit: byte/s). - 1.3.6.1.4.1.34774.4.1.21.11.1.3'
+      indexes:
+      - labelname: hwPerfControllerNFSV4ID
+        type: OctetString
+    - name: hwPerfControllerSMBV1ID
+      oid: 1.3.6.1.4.1.34774.4.1.21.12.1.1
+      type: OctetString
+      help: Controller ID. - 1.3.6.1.4.1.34774.4.1.21.12.1.1
+      indexes:
+      - labelname: hwPerfControllerSMBV1ID
+        type: OctetString
+    - name: hwPerfControllerSMBV1OPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.12.1.2
+      type: counter
+      help: SMB V1 OPS of the controller. - 1.3.6.1.4.1.34774.4.1.21.12.1.2
+      indexes:
+      - labelname: hwPerfControllerSMBV1ID
+        type: OctetString
+    - name: hwPerfControllerSMBV1Bps
+      oid: 1.3.6.1.4.1.34774.4.1.21.12.1.3
+      type: counter
+      help: 'SMB V1 throughput of the controller (unit: byte/s). - 1.3.6.1.4.1.34774.4.1.21.12.1.3'
+      indexes:
+      - labelname: hwPerfControllerSMBV1ID
+        type: OctetString
+    - name: hwPerfControllerSMBV2ID
+      oid: 1.3.6.1.4.1.34774.4.1.21.13.1.1
+      type: OctetString
+      help: Controller ID. - 1.3.6.1.4.1.34774.4.1.21.13.1.1
+      indexes:
+      - labelname: hwPerfControllerSMBV2ID
+        type: OctetString
+    - name: hwPerfControllerSMBV2OPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.13.1.2
+      type: counter
+      help: SMB V2 OPS of the controller. - 1.3.6.1.4.1.34774.4.1.21.13.1.2
+      indexes:
+      - labelname: hwPerfControllerSMBV2ID
+        type: OctetString
+    - name: hwPerfControllerSMBV2Bps
+      oid: 1.3.6.1.4.1.34774.4.1.21.13.1.3
+      type: counter
+      help: 'SMB V2 throughput of the controller (unit: byte/s). - 1.3.6.1.4.1.34774.4.1.21.13.1.3'
+      indexes:
+      - labelname: hwPerfControllerSMBV2ID
+        type: OctetString
+    - name: hwPerfFileSystemID
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.1
+      type: OctetString
+      help: File system ID. - 1.3.6.1.4.1.34774.4.1.21.14.1.1
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfFileSystemOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.2
+      type: counter
+      help: File system OPS. - 1.3.6.1.4.1.34774.4.1.21.14.1.2
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfFileSystemServiceTime
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.3
+      type: counter
+      help: 'Service time of the file system (unit: us). - 1.3.6.1.4.1.34774.4.1.21.14.1.3'
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfFileSystemReadOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.4
+      type: counter
+      help: Read OPS of the file system. - 1.3.6.1.4.1.34774.4.1.21.14.1.4
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfFileSystemReadBandwidth
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.5
+      type: counter
+      help: 'Read bandwidth of the file system (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.14.1.5'
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfFileSystemAvRdOPSRspTime
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.6
+      type: counter
+      help: 'Average read OPS response time of the file system (unit: us). - 1.3.6.1.4.1.34774.4.1.21.14.1.6'
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfFileSystemAvWrOPSRspTime
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.7
+      type: counter
+      help: 'Average write OPS response time of the file system (unit: us). - 1.3.6.1.4.1.34774.4.1.21.14.1.7'
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfFileSystemWriteOPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.8
+      type: counter
+      help: Write OPS of the file system. - 1.3.6.1.4.1.34774.4.1.21.14.1.8
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfFileSystemWriteBandwidth
+      oid: 1.3.6.1.4.1.34774.4.1.21.14.1.9
+      type: counter
+      help: 'Write bandwidth of the file system (unit: MB/s). - 1.3.6.1.4.1.34774.4.1.21.14.1.9'
+      indexes:
+      - labelname: hwPerfFileSystemID
+        type: OctetString
+    - name: hwPerfControllerNFSV41ID
+      oid: 1.3.6.1.4.1.34774.4.1.21.15.1.1
+      type: OctetString
+      help: Controller ID. - 1.3.6.1.4.1.34774.4.1.21.15.1.1
+      indexes:
+      - labelname: hwPerfControllerNFSV41ID
+        type: OctetString
+    - name: hwPerfControllerNFSV41OPS
+      oid: 1.3.6.1.4.1.34774.4.1.21.15.1.2
+      type: counter
+      help: NFSv4 OPS of the controller. - 1.3.6.1.4.1.34774.4.1.21.15.1.2
+      indexes:
+      - labelname: hwPerfControllerNFSV41ID
+        type: OctetString
+    - name: hwPerfControllerNFSV41Bps
+      oid: 1.3.6.1.4.1.34774.4.1.21.15.1.3
+      type: counter
+      help: 'NFSv4 throughput of the controller (unit: byte/s). - 1.3.6.1.4.1.34774.4.1.21.15.1.3'
+      indexes:
+      - labelname: hwPerfControllerNFSV41ID
+        type: OctetString
+    - name: hwInfoDiskDomainID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.1.1.1
+      type: DisplayString
+      help: Disk ID, table index. - 1.3.6.1.4.1.34774.4.1.23.4.1.1.1
+      indexes:
+      - labelname: hwInfoDiskDomainID
+        type: DisplayString
+    - name: hwInfoDiskDomainName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.1.1.2
+      type: DisplayString
+      help: Name of a disk domain. - 1.3.6.1.4.1.34774.4.1.23.4.1.1.2
+      indexes:
+      - labelname: hwInfoDiskDomainID
+        type: DisplayString
+    - name: hwInfoDiskDomainHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.1.1.3
+      type: gauge
+      help: Health status of a disk domain - 1.3.6.1.4.1.34774.4.1.23.4.1.1.3
+      indexes:
+      - labelname: hwInfoDiskDomainID
+        type: DisplayString
+    - name: hwInfoDiskDomainRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.1.1.4
+      type: gauge
+      help: Running status of a disk domain - 1.3.6.1.4.1.34774.4.1.23.4.1.1.4
+      indexes:
+      - labelname: hwInfoDiskDomainID
+        type: DisplayString
+    - name: hwInfoDiskDomainTotalCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.1.1.5
+      type: counter
+      help: Total capacity of a disk domain - 1.3.6.1.4.1.34774.4.1.23.4.1.1.5
+      indexes:
+      - labelname: hwInfoDiskDomainID
+        type: DisplayString
+    - name: hwInfoDiskDomainFreeCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.1.1.6
+      type: counter
+      help: Free capacity of a disk domain - 1.3.6.1.4.1.34774.4.1.23.4.1.1.6
+      indexes:
+      - labelname: hwInfoDiskDomainID
+        type: DisplayString
+    - name: hwInfoDiskDomainHotSpareCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.1.1.7
+      type: counter
+      help: Hot spare capacity of a disk domain - 1.3.6.1.4.1.34774.4.1.23.4.1.1.7
+      indexes:
+      - labelname: hwInfoDiskDomainID
+        type: DisplayString
+    - name: hwInfoDiskDomainUsedHotSpareCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.1.1.8
+      type: counter
+      help: Used hot spare capacity of a disk domain - 1.3.6.1.4.1.34774.4.1.23.4.1.1.8
+      indexes:
+      - labelname: hwInfoDiskDomainID
+        type: DisplayString
+    - name: hwInfoStoragePoolID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.1
+      type: DisplayString
+      help: ID of a storage pool, table index. - 1.3.6.1.4.1.34774.4.1.23.4.2.1.1
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.2
+      type: DisplayString
+      help: Name of a storage pool. - 1.3.6.1.4.1.34774.4.1.23.4.2.1.2
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolDiskDomainID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.3
+      type: DisplayString
+      help: ID of the disk domain where a storage pool resides. - 1.3.6.1.4.1.34774.4.1.23.4.2.1.3
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolDiskDomainName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.4
+      type: DisplayString
+      help: Name of the disk domain where a storage pool resides. - 1.3.6.1.4.1.34774.4.1.23.4.2.1.4
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.5
+      type: gauge
+      help: Health status of a storage pool - 1.3.6.1.4.1.34774.4.1.23.4.2.1.5
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.6
+      type: gauge
+      help: Operating status of a storage pool - 1.3.6.1.4.1.34774.4.1.23.4.2.1.6
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolTotalCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.7
+      type: counter
+      help: 'Total capacity of a storage pool (unit: MB). - 1.3.6.1.4.1.34774.4.1.23.4.2.1.7'
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolSubscribedCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.8
+      type: counter
+      help: 'Used capacity of a storage pool (unit: MB). - 1.3.6.1.4.1.34774.4.1.23.4.2.1.8'
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolFreeCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.9
+      type: counter
+      help: 'Available capacity of a storage pool (unit: MB). - 1.3.6.1.4.1.34774.4.1.23.4.2.1.9'
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolProtectionCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.10
+      type: counter
+      help: 'Data protection capacity of a storage pool (unit: MB). - 1.3.6.1.4.1.34774.4.1.23.4.2.1.10'
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolFullThreshold
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.14
+      type: gauge
+      help: 'Threshold of used capacity of a storage pool (unit: %). - 1.3.6.1.4.1.34774.4.1.23.4.2.1.14'
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolLunTotalCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.23
+      type: counter
+      help: 'Lun capacity of a storage pool (unit: MB). - 1.3.6.1.4.1.34774.4.1.23.4.2.1.23'
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolDataReductionRatio
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.24
+      type: DisplayString
+      help: Data Reduction Ratio. - 1.3.6.1.4.1.34774.4.1.23.4.2.1.24
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolDeduplicationRatio
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.25
+      type: DisplayString
+      help: Data Deduplication Ratio. - 1.3.6.1.4.1.34774.4.1.23.4.2.1.25
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoStoragePoolCompressionRatio
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.2.1.26
+      type: DisplayString
+      help: Data Compression Ratio. - 1.3.6.1.4.1.34774.4.1.23.4.2.1.26
+      indexes:
+      - labelname: hwInfoStoragePoolID
+        type: DisplayString
+    - name: hwInfoPortGroupID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.4.1.1
+      type: OctetString
+      help: ID of a port group, table index. - 1.3.6.1.4.1.34774.4.1.23.4.4.1.1
+      indexes:
+      - labelname: hwInfoPortGroupID
+        type: OctetString
+    - name: hwInfoPortGroupName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.4.1.2
+      type: OctetString
+      help: Name of a port group. - 1.3.6.1.4.1.34774.4.1.23.4.4.1.2
+      indexes:
+      - labelname: hwInfoPortGroupID
+        type: OctetString
+    - name: hwInfoPortGroupPortList
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.4.1.3
+      type: OctetString
+      help: List of ports in a port group - 1.3.6.1.4.1.34774.4.1.23.4.4.1.3
+      indexes:
+      - labelname: hwInfoPortGroupID
+        type: OctetString
+    - name: hwInfoHostID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.1
+      type: DisplayString
+      help: Host ID, table index. - 1.3.6.1.4.1.34774.4.1.23.4.5.1.1
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.2
+      type: DisplayString
+      help: Host name. - 1.3.6.1.4.1.34774.4.1.23.4.5.1.2
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.3
+      type: OctetString
+      help: Host location. - 1.3.6.1.4.1.34774.4.1.23.4.5.1.3
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.4
+      type: gauge
+      help: Host health status - 1.3.6.1.4.1.34774.4.1.23.4.5.1.4
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.5
+      type: gauge
+      help: Host operating status - 1.3.6.1.4.1.34774.4.1.23.4.5.1.5
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostOperatingSystem
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.6
+      type: gauge
+      help: Host operating system - 1.3.6.1.4.1.34774.4.1.23.4.5.1.6
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostIPAddress
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.7
+      type: DisplayString
+      help: Host IP address. - 1.3.6.1.4.1.34774.4.1.23.4.5.1.7
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostNetworkName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.8
+      type: OctetString
+      help: Host domain name. - 1.3.6.1.4.1.34774.4.1.23.4.5.1.8
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostModel
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.5.1.9
+      type: OctetString
+      help: Host model. - 1.3.6.1.4.1.34774.4.1.23.4.5.1.9
+      indexes:
+      - labelname: hwInfoHostID
+        type: DisplayString
+    - name: hwInfoHostGroupID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.6.1.1
+      type: DisplayString
+      help: ID of a host group, table index. - 1.3.6.1.4.1.34774.4.1.23.4.6.1.1
+      indexes:
+      - labelname: hwInfoHostGroupID
+        type: DisplayString
+    - name: hwInfoHostGroupName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.6.1.2
+      type: DisplayString
+      help: Name of a host group. - 1.3.6.1.4.1.34774.4.1.23.4.6.1.2
+      indexes:
+      - labelname: hwInfoHostGroupID
+        type: DisplayString
+    - name: hwInfoHostGroupHostList
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.6.1.3
+      type: DisplayString
+      help: List of hosts in a host group - 1.3.6.1.4.1.34774.4.1.23.4.6.1.3
+      indexes:
+      - labelname: hwInfoHostGroupID
+        type: DisplayString
+    - name: hwInfoLunGroupID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.7.1.1
+      type: OctetString
+      help: ID of a LUN group, table index. - 1.3.6.1.4.1.34774.4.1.23.4.7.1.1
+      indexes:
+      - labelname: hwInfoLunGroupID
+        type: OctetString
+    - name: hwInfoLunGroupName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.7.1.2
+      type: OctetString
+      help: Name of a LUN group. - 1.3.6.1.4.1.34774.4.1.23.4.7.1.2
+      indexes:
+      - labelname: hwInfoLunGroupID
+        type: OctetString
+    - name: hwInfoLunGroupLunList
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.7.1.3
+      type: OctetString
+      help: List of LUNs in a LUN group - 1.3.6.1.4.1.34774.4.1.23.4.7.1.3
+      indexes:
+      - labelname: hwInfoLunGroupID
+        type: OctetString
+    - name: hwInfoLunID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.1
+      type: OctetString
+      help: LUN ID - 1.3.6.1.4.1.34774.4.1.23.4.8.1.1
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.2
+      type: OctetString
+      help: LUN name - 1.3.6.1.4.1.34774.4.1.23.4.8.1.2
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunPoolID
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.3
+      type: OctetString
+      help: ID of the storage pool to which the LUN belongs. - 1.3.6.1.4.1.34774.4.1.23.4.8.1.3
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunPoolName
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.4
+      type: OctetString
+      help: Name of the storage pool to which the LUN belongs. - 1.3.6.1.4.1.34774.4.1.23.4.8.1.4
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.5
+      type: counter
+      help: 'Total capacity of the LUN (unit: MB). - 1.3.6.1.4.1.34774.4.1.23.4.8.1.5'
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunSubscribedCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.6
+      type: counter
+      help: 'Capacity usage quota of the LUN (unit: MB). - 1.3.6.1.4.1.34774.4.1.23.4.8.1.6'
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunProtectionCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.7
+      type: counter
+      help: 'Data protection capacity quota of the LUN (unit: KB). - 1.3.6.1.4.1.34774.4.1.23.4.8.1.7'
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunSectorSize
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.8
+      type: gauge
+      help: 'Sector size of the LUN (unit: B). - 1.3.6.1.4.1.34774.4.1.23.4.8.1.8'
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.9
+      type: gauge
+      help: Health status of the LUN - 1.3.6.1.4.1.34774.4.1.23.4.8.1.9
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.10
+      type: gauge
+      help: Operating status of the LUN - 1.3.6.1.4.1.34774.4.1.23.4.8.1.10
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunType
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.11
+      type: gauge
+      help: LUN type - 1.3.6.1.4.1.34774.4.1.23.4.8.1.11
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunIOPriority
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.12
+      type: gauge
+      help: I/O priority of the LUN - 1.3.6.1.4.1.34774.4.1.23.4.8.1.12
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunWWN
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.13
+      type: OctetString
+      help: WWN of the LUN. - 1.3.6.1.4.1.34774.4.1.23.4.8.1.13
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunExposedToInitiator
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.14
+      type: gauge
+      help: Whether the LUN is mapped to an initiator - 1.3.6.1.4.1.34774.4.1.23.4.8.1.14
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunWritePolicy
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.15
+      type: gauge
+      help: Cache write policy of the LUN - 1.3.6.1.4.1.34774.4.1.23.4.8.1.15
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunRunningWritePolicy
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.16
+      type: gauge
+      help: Operating cache write policy of the LUN - 1.3.6.1.4.1.34774.4.1.23.4.8.1.16
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunPrefetchPolicy
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.17
+      type: gauge
+      help: Cache prefetch policy of the LUN - 1.3.6.1.4.1.34774.4.1.23.4.8.1.17
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunPrefetchValue
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.20
+      type: gauge
+      help: Cache prefetch value of the LUN - 1.3.6.1.4.1.34774.4.1.23.4.8.1.20
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunOwnerController
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.21
+      type: OctetString
+      help: Owning controller of the LUN. - 1.3.6.1.4.1.34774.4.1.23.4.8.1.21
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunWorkController
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.22
+      type: OctetString
+      help: Working controller of the LUN. - 1.3.6.1.4.1.34774.4.1.23.4.8.1.22
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunIsAddToLunGroup
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.25
+      type: gauge
+      help: Whether the LUN is added to the LUN group - 1.3.6.1.4.1.34774.4.1.23.4.8.1.25
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunDIFSwitch
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.26
+      type: gauge
+      help: Whether the DIF function is enabled for the LUN - 1.3.6.1.4.1.34774.4.1.23.4.8.1.26
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunRemoteLUNWWN
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.27
+      type: OctetString
+      help: WWN of the remote LUN. - 1.3.6.1.4.1.34774.4.1.23.4.8.1.27
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoLunUsageType
+      oid: 1.3.6.1.4.1.34774.4.1.23.4.8.1.28
+      type: gauge
+      help: LUN type - 1.3.6.1.4.1.34774.4.1.23.4.8.1.28
+      indexes:
+      - labelname: hwInfoLunID
+        type: OctetString
+    - name: hwInfoDiskID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.1
+      type: DisplayString
+      help: Disk ID, table index. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.1
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.2
+      type: gauge
+      help: Disk health status - 1.3.6.1.4.1.34774.4.1.23.5.1.1.2
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.3
+      type: gauge
+      help: Disk running status - 1.3.6.1.4.1.34774.4.1.23.5.1.1.3
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.4
+      type: DisplayString
+      help: Disk location. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.4
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.5
+      type: gauge
+      help: Disk type - 1.3.6.1.4.1.34774.4.1.23.5.1.1.5
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.6
+      type: counter
+      help: 'Disk capacity(unit: MB). - 1.3.6.1.4.1.34774.4.1.23.5.1.1.6'
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskRole
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.7
+      type: gauge
+      help: Logical type of a disk - 1.3.6.1.4.1.34774.4.1.23.5.1.1.7
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskSpeed
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.8
+      type: gauge
+      help: 'Rotational speed of a disk(unit: rpm). - 1.3.6.1.4.1.34774.4.1.23.5.1.1.8'
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskInterfaceBandwidth
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.9
+      type: gauge
+      help: 'Disk interface bandwidth(unit: Mbit/s). - 1.3.6.1.4.1.34774.4.1.23.5.1.1.9'
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskSectorSize
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.10
+      type: gauge
+      help: 'Sector size of a disk (unit: B). - 1.3.6.1.4.1.34774.4.1.23.5.1.1.10'
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskTemperature
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.11
+      type: gauge
+      help: 'Disk temperature (unit: C). - 1.3.6.1.4.1.34774.4.1.23.5.1.1.11'
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskModel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.12
+      type: DisplayString
+      help: Disk model. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.12
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskFirmwareVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.13
+      type: DisplayString
+      help: Firmware version of a disk. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.13
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskManufacturer
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.14
+      type: DisplayString
+      help: Disk manufacturer. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.14
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskSerialNumber
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.15
+      type: DisplayString
+      help: Disk SN. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.15
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskLightStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.16
+      type: gauge
+      help: Disk indicator status - 1.3.6.1.4.1.34774.4.1.23.5.1.1.16
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskDiskDomainID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.17
+      type: DisplayString
+      help: ID of a disk domain. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.17
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskDiskDomainName
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.18
+      type: DisplayString
+      help: Name of a disk domain. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.18
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskDiskDomainTierID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.19
+      type: DisplayString
+      help: ID of a disk domain tier. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.19
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskCofferDisk
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.20
+      type: gauge
+      help: To determine whether a disk is a coffer disk - 1.3.6.1.4.1.34774.4.1.23.5.1.1.20
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskRunTime
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.21
+      type: gauge
+      help: 'Disk operation period(unit: day). - 1.3.6.1.4.1.34774.4.1.23.5.1.1.21'
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskProgress
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.22
+      type: gauge
+      help: 'Progress of disk reconstruction, copyback, pre-copy, or destruction(unit:
+        %). - 1.3.6.1.4.1.34774.4.1.23.5.1.1.22'
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskBarCode
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.23
+      type: DisplayString
+      help: Disk barcode. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.23
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskCapacityUsage
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.24
+      type: gauge
+      help: 'Capacity usage of a disk(unit: %). - 1.3.6.1.4.1.34774.4.1.23.5.1.1.24'
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskHealthMark
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.25
+      type: gauge
+      help: Health score of a disk - 1.3.6.1.4.1.34774.4.1.23.5.1.1.25
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoDiskElectronicLabel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.1.1.26
+      type: DisplayString
+      help: Electronic label of a disk. - 1.3.6.1.4.1.34774.4.1.23.5.1.1.26
+      indexes:
+      - labelname: hwInfoDiskID
+        type: DisplayString
+    - name: hwInfoControllerID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.1
+      type: DisplayString
+      help: Controller ID, table index. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.1
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.2
+      type: gauge
+      help: Controller health status - 1.3.6.1.4.1.34774.4.1.23.5.2.1.2
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.3
+      type: gauge
+      help: Controller running status - 1.3.6.1.4.1.34774.4.1.23.5.2.1.3
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerCPU
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.4
+      type: DisplayString
+      help: Controller CPU. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.4
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.5
+      type: DisplayString
+      help: Controller location. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.5
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerRole
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.6
+      type: gauge
+      help: Controller role - 1.3.6.1.4.1.34774.4.1.23.5.2.1.6
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerCacheCapacity
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.7
+      type: gauge
+      help: 'Cache capacity of a controller (unit: MB). - 1.3.6.1.4.1.34774.4.1.23.5.2.1.7'
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerCPUUsage
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.8
+      type: gauge
+      help: 'CPU usage of a controller (unit: %). - 1.3.6.1.4.1.34774.4.1.23.5.2.1.8'
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerMemoryUsage
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.9
+      type: gauge
+      help: 'Memory usage of the operating system in the controller (unit: %). - 1.3.6.1.4.1.34774.4.1.23.5.2.1.9'
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerVoltage
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.10
+      type: gauge
+      help: 'Power voltage of a controller (unit: 0.1 V). - 1.3.6.1.4.1.34774.4.1.23.5.2.1.10'
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerSoftwareVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.11
+      type: DisplayString
+      help: Software version of a controller. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.11
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerPCBVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.12
+      type: DisplayString
+      help: PCB version of a controller. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.12
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerSESVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.13
+      type: DisplayString
+      help: SES version of a controller. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.13
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerBMCVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.14
+      type: DisplayString
+      help: BMC version of a controller - 1.3.6.1.4.1.34774.4.1.23.5.2.1.14
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerLogicVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.15
+      type: DisplayString
+      help: Logical version of a controller. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.15
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerBIOSVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.16
+      type: DisplayString
+      help: BIOS version of a controller. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.16
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoControllerElectronicLabel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.2.1.17
+      type: DisplayString
+      help: Electronic label of a controller. - 1.3.6.1.4.1.34774.4.1.23.5.2.1.17
+      indexes:
+      - labelname: hwInfoControllerID
+        type: DisplayString
+    - name: hwInfoPowerID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.1
+      type: DisplayString
+      help: ID of a power supply, table index. - 1.3.6.1.4.1.34774.4.1.23.5.3.1.1
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.2
+      type: DisplayString
+      help: Location of a power supply. - 1.3.6.1.4.1.34774.4.1.23.5.3.1.2
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.3
+      type: gauge
+      help: Health status of a power supply - 1.3.6.1.4.1.34774.4.1.23.5.3.1.3
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.4
+      type: gauge
+      help: Operating status of a power supply - 1.3.6.1.4.1.34774.4.1.23.5.3.1.4
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.5
+      type: gauge
+      help: Type of a power supply - 1.3.6.1.4.1.34774.4.1.23.5.3.1.5
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerManufacturer
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.6
+      type: DisplayString
+      help: Manufacturer of a power supply. - 1.3.6.1.4.1.34774.4.1.23.5.3.1.6
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerModle
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.7
+      type: DisplayString
+      help: Model of a power supply. - 1.3.6.1.4.1.34774.4.1.23.5.3.1.7
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.8
+      type: DisplayString
+      help: Version of a power supply. - 1.3.6.1.4.1.34774.4.1.23.5.3.1.8
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerProduceDate
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.9
+      type: DisplayString
+      help: Production date of a power supply. - 1.3.6.1.4.1.34774.4.1.23.5.3.1.9
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoPowerSerialNumber
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.3.1.10
+      type: DisplayString
+      help: SN of a power supply. - 1.3.6.1.4.1.34774.4.1.23.5.3.1.10
+      indexes:
+      - labelname: hwInfoPowerID
+        type: DisplayString
+    - name: hwInfoFanID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.4.1.1
+      type: DisplayString
+      help: Fan ID, table index. - 1.3.6.1.4.1.34774.4.1.23.5.4.1.1
+      indexes:
+      - labelname: hwInfoFanID
+        type: DisplayString
+    - name: hwInfoFanLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.4.1.2
+      type: DisplayString
+      help: Fan Location. - 1.3.6.1.4.1.34774.4.1.23.5.4.1.2
+      indexes:
+      - labelname: hwInfoFanID
+        type: DisplayString
+    - name: hwInfoFanHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.4.1.3
+      type: gauge
+      help: Health status of a fan - 1.3.6.1.4.1.34774.4.1.23.5.4.1.3
+      indexes:
+      - labelname: hwInfoFanID
+        type: DisplayString
+    - name: hwInfoFanRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.4.1.4
+      type: gauge
+      help: Operating status of a fan - 1.3.6.1.4.1.34774.4.1.23.5.4.1.4
+      indexes:
+      - labelname: hwInfoFanID
+        type: DisplayString
+    - name: hwInfoFanRunningLevel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.4.1.5
+      type: gauge
+      help: Operating level of a fan - 1.3.6.1.4.1.34774.4.1.23.5.4.1.5
+      indexes:
+      - labelname: hwInfoFanID
+        type: DisplayString
+    - name: hwInfoFanElectronicLabel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.4.1.6
+      type: DisplayString
+      help: Electronic label of a fan. - 1.3.6.1.4.1.34774.4.1.23.5.4.1.6
+      indexes:
+      - labelname: hwInfoFanID
+        type: DisplayString
+    - name: hwInfoBBUID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.1
+      type: DisplayString
+      help: BBU ID, table index. - 1.3.6.1.4.1.34774.4.1.23.5.5.1.1
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBULocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.2
+      type: DisplayString
+      help: BBU Location. - 1.3.6.1.4.1.34774.4.1.23.5.5.1.2
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBUHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.3
+      type: gauge
+      help: Health status of a BBU - 1.3.6.1.4.1.34774.4.1.23.5.5.1.3
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBURunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.4
+      type: gauge
+      help: Running status of a BBU - 1.3.6.1.4.1.34774.4.1.23.5.5.1.4
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBUType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.5
+      type: gauge
+      help: Type of a BBU - 1.3.6.1.4.1.34774.4.1.23.5.5.1.5
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBUCurrentVoltage
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.6
+      type: gauge
+      help: 'Current voltage of a BBU (unit: 0.1 V). - 1.3.6.1.4.1.34774.4.1.23.5.5.1.6'
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBUNumberOfDischarges
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.7
+      type: gauge
+      help: 'Discharge times of a BBU(unit: times). - 1.3.6.1.4.1.34774.4.1.23.5.5.1.7'
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBUFirmwareVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.8
+      type: DisplayString
+      help: Firmware version of a BBU. - 1.3.6.1.4.1.34774.4.1.23.5.5.1.8
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBUDeliveredOn
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.9
+      type: DisplayString
+      help: Shipping date of a BBU. - 1.3.6.1.4.1.34774.4.1.23.5.5.1.9
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBUOwningController
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.10
+      type: DisplayString
+      help: Owning controller of a BBU. - 1.3.6.1.4.1.34774.4.1.23.5.5.1.10
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoBBUElectronicLabel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.5.1.11
+      type: DisplayString
+      help: Electronic label of a BBU. - 1.3.6.1.4.1.34774.4.1.23.5.5.1.11
+      indexes:
+      - labelname: hwInfoBBUID
+        type: DisplayString
+    - name: hwInfoEnclosureID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.1
+      type: DisplayString
+      help: Enclosure ID, table index. - 1.3.6.1.4.1.34774.4.1.23.5.6.1.1
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureName
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.2
+      type: DisplayString
+      help: Enclosure name. - 1.3.6.1.4.1.34774.4.1.23.5.6.1.2
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureLogicType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.3
+      type: gauge
+      help: Logical type of an enclosure - 1.3.6.1.4.1.34774.4.1.23.5.6.1.3
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.4
+      type: gauge
+      help: Health status of an enclosure - 1.3.6.1.4.1.34774.4.1.23.5.6.1.4
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.5
+      type: gauge
+      help: Operating status of an enclosure - 1.3.6.1.4.1.34774.4.1.23.5.6.1.5
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.6
+      type: DisplayString
+      help: Enclosure location. - 1.3.6.1.4.1.34774.4.1.23.5.6.1.6
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.7
+      type: gauge
+      help: Enclosure type - 1.3.6.1.4.1.34774.4.1.23.5.6.1.7
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureTemperature
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.8
+      type: gauge
+      help: 'Enclosure temperature (unit: C). - 1.3.6.1.4.1.34774.4.1.23.5.6.1.8'
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureSN
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.9
+      type: DisplayString
+      help: Enclosure SN. - 1.3.6.1.4.1.34774.4.1.23.5.6.1.9
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureMAC
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.10
+      type: DisplayString
+      help: MAC address of an enclosure. - 1.3.6.1.4.1.34774.4.1.23.5.6.1.10
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureHeight
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.11
+      type: gauge
+      help: 'Enclosure height (unit: U). - 1.3.6.1.4.1.34774.4.1.23.5.6.1.11'
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureExpansionDepth
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.12
+      type: gauge
+      help: Number of cascaded enclosures. - 1.3.6.1.4.1.34774.4.1.23.5.6.1.12
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoEnclosureElectronicLabel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.6.1.13
+      type: DisplayString
+      help: Electronic label of an enclosure. - 1.3.6.1.4.1.34774.4.1.23.5.6.1.13
+      indexes:
+      - labelname: hwInfoEnclosureID
+        type: DisplayString
+    - name: hwInfoPortComID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.7.1.1
+      type: OctetString
+      help: ID of a serial port, table index. - 1.3.6.1.4.1.34774.4.1.23.5.7.1.1
+      indexes:
+      - labelname: hwInfoPortComID
+        type: DisplayString
+    - name: hwInfoPortComLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.7.1.2
+      type: DisplayString
+      help: Location of a serial port. - 1.3.6.1.4.1.34774.4.1.23.5.7.1.2
+      indexes:
+      - labelname: hwInfoPortComID
+        type: DisplayString
+    - name: hwInfoPortComHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.7.1.3
+      type: gauge
+      help: Health status of a serial port - 1.3.6.1.4.1.34774.4.1.23.5.7.1.3
+      indexes:
+      - labelname: hwInfoPortComID
+        type: DisplayString
+    - name: hwInfoPortComRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.7.1.4
+      type: gauge
+      help: Operating status of a serial port - 1.3.6.1.4.1.34774.4.1.23.5.7.1.4
+      indexes:
+      - labelname: hwInfoPortComID
+        type: DisplayString
+    - name: hwInfoPortComType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.7.1.5
+      type: gauge
+      help: Logical type of a serial port - 1.3.6.1.4.1.34774.4.1.23.5.7.1.5
+      indexes:
+      - labelname: hwInfoPortComID
+        type: DisplayString
+    - name: hwInfoPortEthID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.1
+      type: DisplayString
+      help: ID of an Ethernet port, table index. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.1
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.2
+      type: DisplayString
+      help: Location of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.2
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.3
+      type: gauge
+      help: Health status of an Ethernet port - 1.3.6.1.4.1.34774.4.1.23.5.8.1.3
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.4
+      type: gauge
+      help: Operating status of an Ethernet port - 1.3.6.1.4.1.34774.4.1.23.5.8.1.4
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.5
+      type: gauge
+      help: Logical type of an Ethernet port - 1.3.6.1.4.1.34774.4.1.23.5.8.1.5
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthIPv4Address
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.6
+      type: DisplayString
+      help: IPv4 address of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.6
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthSubnetMask
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.7
+      type: DisplayString
+      help: IPv4 mask of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.7
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthIPv4Gateway
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.8
+      type: DisplayString
+      help: IPv4 gateway of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.8
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthIPv6Address
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.9
+      type: OctetString
+      help: IPv6 address of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.9
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthIPv6PrefixLength
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.10
+      type: OctetString
+      help: IPv6 mask of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.10
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthIPv6Gateway
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.11
+      type: OctetString
+      help: IPv6 gateway of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.11
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthMAC
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.12
+      type: DisplayString
+      help: MAC address of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.12
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthRole
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.13
+      type: gauge
+      help: Role of an Ethernet port - 1.3.6.1.4.1.34774.4.1.23.5.8.1.13
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthMode
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.14
+      type: gauge
+      help: Auto-negotiation mode of an Ethernet port - 1.3.6.1.4.1.34774.4.1.23.5.8.1.14
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthMTU
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.15
+      type: gauge
+      help: 'Maximum transmission unit (MTU) of an Ethernet port (unit: B) - 1.3.6.1.4.1.34774.4.1.23.5.8.1.15'
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthWorkingRate
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.16
+      type: gauge
+      help: 'Working rate of an Ethernet port (unit: Mbit/s) - 1.3.6.1.4.1.34774.4.1.23.5.8.1.16'
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthBondName
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.17
+      type: DisplayString
+      help: Bond name of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.17
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthiSCSIPort
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.18
+      type: DisplayString
+      help: iSCSI port number of an Ethernet port - 1.3.6.1.4.1.34774.4.1.23.5.8.1.18
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthiSCSIName
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.19
+      type: DisplayString
+      help: iSCSI name of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.19
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthErrorPackets
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.20
+      type: gauge
+      help: Number of error packets of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.20
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthLostPackages
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.21
+      type: gauge
+      help: Number of lost packets of an Ethernet port. - 1.3.6.1.4.1.34774.4.1.23.5.8.1.21
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortEthStartTime
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.8.1.22
+      type: DisplayString
+      help: Time when the bit error statistics of an Ethernet port starts - 1.3.6.1.4.1.34774.4.1.23.5.8.1.22
+      indexes:
+      - labelname: hwInfoPortEthID
+        type: DisplayString
+    - name: hwInfoPortFCID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.1
+      type: OctetString
+      help: ID of a Fibre Channel port, table index. - 1.3.6.1.4.1.34774.4.1.23.5.9.1.1
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.2
+      type: OctetString
+      help: Location of a Fibre Channel port. - 1.3.6.1.4.1.34774.4.1.23.5.9.1.2
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.3
+      type: gauge
+      help: Health status of a Fibre Channel port - 1.3.6.1.4.1.34774.4.1.23.5.9.1.3
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.4
+      type: gauge
+      help: Operating status of a Fibre Channel port - 1.3.6.1.4.1.34774.4.1.23.5.9.1.4
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.5
+      type: gauge
+      help: Logical type of a Fibre Channel port - 1.3.6.1.4.1.34774.4.1.23.5.9.1.5
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCWorkingRate
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.6
+      type: gauge
+      help: 'Working rate of a Fibre Channel port (unit: Mbit/s) - 1.3.6.1.4.1.34774.4.1.23.5.9.1.6'
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCConfiguredSpeed
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.7
+      type: gauge
+      help: 'Configured rate of a Fibre Channel port (unit: Mbit/s) - 1.3.6.1.4.1.34774.4.1.23.5.9.1.7'
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCWWN
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.8
+      type: OctetString
+      help: World wide name (WWN) of a Fibre Channel port. - 1.3.6.1.4.1.34774.4.1.23.5.9.1.8
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCRole
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.9
+      type: gauge
+      help: Role of a Fibre Channel port - 1.3.6.1.4.1.34774.4.1.23.5.9.1.9
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCSFPStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.10
+      type: gauge
+      help: Status of a Fibre Channel port - 1.3.6.1.4.1.34774.4.1.23.5.9.1.10
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCWorkingMode
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.11
+      type: gauge
+      help: Operating mode of a Fibre Channel port - 1.3.6.1.4.1.34774.4.1.23.5.9.1.11
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCConfiguredMode
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.12
+      type: gauge
+      help: Configured mode of a Fibre Channel port - 1.3.6.1.4.1.34774.4.1.23.5.9.1.12
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCFloginDelayTimes
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.13
+      type: gauge
+      help: 'Flogin delay of a Fibre Channel port (unit: ms). - 1.3.6.1.4.1.34774.4.1.23.5.9.1.13'
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCLostSignals
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.14
+      type: gauge
+      help: Number of Loss of Signal errors of a Fibre Channel port. - 1.3.6.1.4.1.34774.4.1.23.5.9.1.14
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCLinkErrorsCodes
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.15
+      type: gauge
+      help: Number of Bad RX Char errors of a Fibre Channel port. - 1.3.6.1.4.1.34774.4.1.23.5.9.1.15
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCLostSynchronizations
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.16
+      type: gauge
+      help: Number of Loss of Sync errors of a Fibre Channel port. - 1.3.6.1.4.1.34774.4.1.23.5.9.1.16
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCFailedConnections
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.17
+      type: gauge
+      help: Number of Link Fail errors of a Fibre Channel port. - 1.3.6.1.4.1.34774.4.1.23.5.9.1.17
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortFCStartTime
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.9.1.18
+      type: OctetString
+      help: Time when the bit error statistics of a Fibre Channel port starts - 1.3.6.1.4.1.34774.4.1.23.5.9.1.18
+      indexes:
+      - labelname: hwInfoPortFCID
+        type: OctetString
+    - name: hwInfoPortPCIEID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.1
+      type: OctetString
+      help: ID of a PCIe port, table index. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.1
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIELocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.2
+      type: OctetString
+      help: Location of a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.2
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIEHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.3
+      type: gauge
+      help: Health status of a PCIe port - 1.3.6.1.4.1.34774.4.1.23.5.11.1.3
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIERunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.4
+      type: gauge
+      help: Operating status of a PCIe port - 1.3.6.1.4.1.34774.4.1.23.5.11.1.4
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIESpeed
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.5
+      type: gauge
+      help: 'Data transmission rate of a PCIe port (unit: Mbit/s). - 1.3.6.1.4.1.34774.4.1.23.5.11.1.5'
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIECurrentPeerPortID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.6
+      type: OctetString
+      help: ID of the port connecting to a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.6
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIESuggestPeerPortID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.7
+      type: OctetString
+      help: ID of the port that is supposed to connect to a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.7
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIELostSignals
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.8
+      type: gauge
+      help: Number of bit errors of a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.8
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIEECRCError
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.9
+      type: gauge
+      help: Number of ECRC errors of a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.9
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIEBadTlp
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.10
+      type: gauge
+      help: Number of bad TLPs of a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.10
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIEBadDllp
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.11
+      type: gauge
+      help: Number of bad DLLPs of a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.11
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIERecvError
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.12
+      type: gauge
+      help: Number of receiver errors of a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.12
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIEChipEccError
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.13
+      type: gauge
+      help: Number of chip ECC errors of a PCIe port. - 1.3.6.1.4.1.34774.4.1.23.5.11.1.13
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortPCIEStartTime
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.11.1.14
+      type: OctetString
+      help: Time when the bit error statistics of a PCIe port starts - 1.3.6.1.4.1.34774.4.1.23.5.11.1.14
+      indexes:
+      - labelname: hwInfoPortPCIEID
+        type: OctetString
+    - name: hwInfoPortSASID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.1
+      type: OctetString
+      help: ID of a SAS port, table index. - 1.3.6.1.4.1.34774.4.1.23.5.12.1.1
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.2
+      type: OctetString
+      help: Location of a SAS port. - 1.3.6.1.4.1.34774.4.1.23.5.12.1.2
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.3
+      type: gauge
+      help: Health status of a SAS port - 1.3.6.1.4.1.34774.4.1.23.5.12.1.3
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.4
+      type: gauge
+      help: Operating status of a SAS port - 1.3.6.1.4.1.34774.4.1.23.5.12.1.4
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASType
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.5
+      type: gauge
+      help: Logical type of a SAS port - 1.3.6.1.4.1.34774.4.1.23.5.12.1.5
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASWorkingRate
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.6
+      type: gauge
+      help: 'Working rate of a SAS port (unit: Mbit/s) - 1.3.6.1.4.1.34774.4.1.23.5.12.1.6'
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASWWN
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.7
+      type: OctetString
+      help: WWN of a SAS port. - 1.3.6.1.4.1.34774.4.1.23.5.12.1.7
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASRole
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.8
+      type: gauge
+      help: Role of a SAS port - 1.3.6.1.4.1.34774.4.1.23.5.12.1.8
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASInvalidDword
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.9
+      type: gauge
+      help: Number of invalid DWORDs of a SAS port. - 1.3.6.1.4.1.34774.4.1.23.5.12.1.9
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASConsistErrors
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.10
+      type: gauge
+      help: Number of consistency errors of a SAS port. - 1.3.6.1.4.1.34774.4.1.23.5.12.1.10
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASLossOfDword
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.11
+      type: gauge
+      help: Number of lost DWORDs of a SAS port. - 1.3.6.1.4.1.34774.4.1.23.5.12.1.11
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASPHYResetErrors
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.12
+      type: gauge
+      help: Number of physical reset errors of a SAS port. - 1.3.6.1.4.1.34774.4.1.23.5.12.1.12
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASStartTime
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.13
+      type: OctetString
+      help: Time when the bit error statistics of a SAS port starts - 1.3.6.1.4.1.34774.4.1.23.5.12.1.13
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoPortSASEnabled
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.12.1.14
+      type: gauge
+      help: To determine whether a SAS port is enabled - 1.3.6.1.4.1.34774.4.1.23.5.12.1.14
+      indexes:
+      - labelname: hwInfoPortSASID
+        type: OctetString
+    - name: hwInfoInterfaceModuleID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.13.1.1
+      type: OctetString
+      help: ID of an interface module, table index. - 1.3.6.1.4.1.34774.4.1.23.5.13.1.1
+      indexes:
+      - labelname: hwInfoInterfaceModuleID
+        type: OctetString
+    - name: hwInfoInterfaceModuleLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.13.1.2
+      type: OctetString
+      help: Location of an interface module. - 1.3.6.1.4.1.34774.4.1.23.5.13.1.2
+      indexes:
+      - labelname: hwInfoInterfaceModuleID
+        type: OctetString
+    - name: hwInfoInterfaceModuleHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.13.1.3
+      type: gauge
+      help: Health status of an interface module - 1.3.6.1.4.1.34774.4.1.23.5.13.1.3
+      indexes:
+      - labelname: hwInfoInterfaceModuleID
+        type: OctetString
+    - name: hwInfoInterfaceModuleRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.13.1.4
+      type: gauge
+      help: Operating status of an interface module - 1.3.6.1.4.1.34774.4.1.23.5.13.1.4
+      indexes:
+      - labelname: hwInfoInterfaceModuleID
+        type: OctetString
+    - name: hwInfoInterfaceModuleModel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.13.1.5
+      type: gauge
+      help: Type of an interface module - 1.3.6.1.4.1.34774.4.1.23.5.13.1.5
+      indexes:
+      - labelname: hwInfoInterfaceModuleID
+        type: OctetString
+    - name: hwInfoInterfaceModuleLogicVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.13.1.6
+      type: OctetString
+      help: Logical version of an interface module, When the value is - 1.3.6.1.4.1.34774.4.1.23.5.13.1.6
+      indexes:
+      - labelname: hwInfoInterfaceModuleID
+        type: OctetString
+    - name: hwInfoInterfaceModulePCBVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.13.1.7
+      type: OctetString
+      help: PCB version of an interface module. - 1.3.6.1.4.1.34774.4.1.23.5.13.1.7
+      indexes:
+      - labelname: hwInfoInterfaceModuleID
+        type: OctetString
+    - name: hwInfoInterfaceModuleElectronicLabel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.13.1.8
+      type: OctetString
+      help: Electronic label of an interface module. - 1.3.6.1.4.1.34774.4.1.23.5.13.1.8
+      indexes:
+      - labelname: hwInfoInterfaceModuleID
+        type: OctetString
+    - name: hwInfoExpBoardID
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.1
+      type: OctetString
+      help: ID of an expansion module, table index. - 1.3.6.1.4.1.34774.4.1.23.5.14.1.1
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwInfoExpBoardLocation
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.2
+      type: OctetString
+      help: Location of an expansion module. - 1.3.6.1.4.1.34774.4.1.23.5.14.1.2
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwInfoExpBoardHealthStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.3
+      type: gauge
+      help: Health status of an expansion module - 1.3.6.1.4.1.34774.4.1.23.5.14.1.3
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwInfoExpBoardRunningStatus
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.4
+      type: gauge
+      help: Operating status of an expansion module - 1.3.6.1.4.1.34774.4.1.23.5.14.1.4
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwInfoExpBoardModel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.5
+      type: gauge
+      help: Model of an expansion module - 1.3.6.1.4.1.34774.4.1.23.5.14.1.5
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwInfoExpBoardLogicVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.6
+      type: OctetString
+      help: Logical version of an expansion module, When the value is - 1.3.6.1.4.1.34774.4.1.23.5.14.1.6
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwInfoExpBoardPCBVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.7
+      type: OctetString
+      help: PCB version of an expansion module. - 1.3.6.1.4.1.34774.4.1.23.5.14.1.7
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwInfoExpBoardSESVersion
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.8
+      type: OctetString
+      help: SES version of an expansion module. - 1.3.6.1.4.1.34774.4.1.23.5.14.1.8
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwInfoExpBoardELabel
+      oid: 1.3.6.1.4.1.34774.4.1.23.5.14.1.9
+      type: OctetString
+      help: Electronic label of an expansion module. - 1.3.6.1.4.1.34774.4.1.23.5.14.1.9
+      indexes:
+      - labelname: hwInfoExpBoardID
+        type: OctetString
+    - name: hwIsmEventType
+      oid: 1.3.6.1.4.1.34774.4.1.3.1.1.1
+      type: gauge
+      help: Alarm type - 1.3.6.1.4.1.34774.4.1.3.1.1.1
+      indexes:
+      - labelname: hwIsmEventSequence
+        type: gauge
+    - name: hwIsmEventID
+      oid: 1.3.6.1.4.1.34774.4.1.3.1.1.2
+      type: counter
+      help: Original alarm ID - 1.3.6.1.4.1.34774.4.1.3.1.1.2
+      indexes:
+      - labelname: hwIsmEventSequence
+        type: gauge
+    - name: hwIsmEventLevel
+      oid: 1.3.6.1.4.1.34774.4.1.3.1.1.3
+      type: gauge
+      help: Alarm severity - 1.3.6.1.4.1.34774.4.1.3.1.1.3
+      indexes:
+      - labelname: hwIsmEventSequence
+        type: gauge
+    - name: hwIsmEventSequence
+      oid: 1.3.6.1.4.1.34774.4.1.3.1.1.4
+      type: gauge
+      help: Alarm SN, namely, unique identifier of the alarm. - 1.3.6.1.4.1.34774.4.1.3.1.1.4
+      indexes:
+      - labelname: hwIsmEventSequence
+        type: gauge
+    - name: hwIsmEventTime
+      oid: 1.3.6.1.4.1.34774.4.1.3.1.1.5
+      type: gauge
+      help: 'UTC time when the alarm was generated, unit: seconds. - 1.3.6.1.4.1.34774.4.1.3.1.1.5'
+      indexes:
+      - labelname: hwIsmEventSequence
+        type: gauge
+    - name: hwIsmEventRecoveryTime
+      oid: 1.3.6.1.4.1.34774.4.1.3.1.1.6
+      type: gauge
+      help: 'UTC time when the alarm was cleared, unit: seconds. - 1.3.6.1.4.1.34774.4.1.3.1.1.6'
+      indexes:
+      - labelname: hwIsmEventSequence
+        type: gauge
+    - name: hwIsmEventParameter
+      oid: 1.3.6.1.4.1.34774.4.1.3.1.1.7
+      type: OctetString
+      help: Alarm location parameter - 1.3.6.1.4.1.34774.4.1.3.1.1.7
+      indexes:
+      - labelname: hwIsmEventSequence
+        type: gauge
+    - name: hwIsmEventRowStatus
+      oid: 1.3.6.1.4.1.34774.4.1.3.1.1.20
+      type: gauge
+      help: Row status value - 1.3.6.1.4.1.34774.4.1.3.1.1.20
+      indexes:
+      - labelname: hwIsmEventSequence
+        type: gauge
+      enum_values:
+        1: active
+        2: notInService
+        3: notReady
+        4: createAndGo
+        5: createAndWait
+        6: destroy

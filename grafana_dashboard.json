@@ -1,0 +1,3198 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 58,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 15,
+      "panels": [],
+      "title": "Instance information",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "1": {
+                  "index": 0,
+                  "text": "OK"
+                },
+                "2": {
+                  "index": 1,
+                  "text": "Fault"
+                },
+                "3": {
+                  "index": 2,
+                  "text": "Pre-Fail"
+                },
+                "4": {
+                  "index": 3,
+                  "text": "Partially Broken"
+                },
+                "5": {
+                  "index": 4,
+                  "text": "Degraded"
+                },
+                "6": {
+                  "index": 5,
+                  "text": "Bad Sectors Found"
+                },
+                "7": {
+                  "index": 6,
+                  "text": "Bit Errors Found"
+                },
+                "8": {
+                  "index": 7,
+                  "text": "Consistent"
+                },
+                "9": {
+                  "index": 8,
+                  "text": "Inconsistent"
+                },
+                "10": {
+                  "index": 9,
+                  "text": "Busy"
+                },
+                "11": {
+                  "index": 10,
+                  "text": "No Input"
+                },
+                "12": {
+                  "index": 11,
+                  "text": "Low Battery"
+                },
+                "13": {
+                  "index": 12,
+                  "text": "Single Link Fault"
+                },
+                "14": {
+                  "index": 13,
+                  "text": "Invalid"
+                },
+                "15": {
+                  "index": 14,
+                  "text": "Write Protect"
+                },
+                "16": {
+                  "index": 15,
+                  "text": "single link"
+                },
+                "17": {
+                  "index": 16,
+                  "text": "No Redundant Link"
+                },
+                "18": {
+                  "index": 17,
+                  "text": "Offline"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-red",
+                "value": 2
+              },
+              {
+                "color": "light-red",
+                "value": 3
+              },
+              {
+                "color": "dark-green",
+                "value": 8
+              },
+              {
+                "color": "yellow",
+                "value": 9
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 15
+              },
+              {
+                "color": "green",
+                "value": 16
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 17
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 1
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "hwInfoPowerHealthStatus{instance=\"$instance\"}",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Power Status",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto",
+              "wrapText": false
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Disk Status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "1": {
+                        "index": 0,
+                        "text": "OK"
+                      },
+                      "2": {
+                        "index": 1,
+                        "text": "Fault"
+                      },
+                      "3": {
+                        "index": 2,
+                        "text": "Pre-Fault"
+                      },
+                      "4": {
+                        "index": 3,
+                        "text": "Partially Broken"
+                      },
+                      "5": {
+                        "index": 4,
+                        "text": "Degraded"
+                      },
+                      "6": {
+                        "index": 5,
+                        "text": "Bad Sectors"
+                      },
+                      "7": {
+                        "index": 6,
+                        "text": "Bit Errors Found"
+                      },
+                      "8": {
+                        "index": 7,
+                        "text": "Consistent"
+                      },
+                      "9": {
+                        "index": 8,
+                        "text": "Inconsistent"
+                      },
+                      "10": {
+                        "index": 9,
+                        "text": "Busy"
+                      },
+                      "11": {
+                        "index": 10,
+                        "text": "No Input"
+                      },
+                      "12": {
+                        "index": 12,
+                        "text": "Low Battery"
+                      },
+                      "13": {
+                        "index": 13,
+                        "text": "Single Link Fault"
+                      },
+                      "14": {
+                        "index": 14,
+                        "text": "Invalid"
+                      },
+                      "15": {
+                        "index": 15,
+                        "text": "Write Protect"
+                      },
+                      "16": {
+                        "index": 16,
+                        "text": "single link"
+                      },
+                      "17": {
+                        "index": 17,
+                        "text": "No Redundant Link"
+                      },
+                      "18": {
+                        "index": 18,
+                        "text": "Offline"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "applyToRow": false,
+                  "mode": "gradient",
+                  "type": "color-background",
+                  "wrapText": false
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 1
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 2
+                    },
+                    {
+                      "color": "light-red",
+                      "value": 3
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 8
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 9
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 15
+                    },
+                    {
+                      "color": "green",
+                      "value": 16
+                    },
+                    {
+                      "color": "semi-dark-orange",
+                      "value": 17
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Disk Type"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "0": {
+                        "index": 0,
+                        "text": "FC"
+                      },
+                      "1": {
+                        "index": 1,
+                        "text": "SAS"
+                      },
+                      "2": {
+                        "index": 2,
+                        "text": "SATA"
+                      },
+                      "3": {
+                        "index": 3,
+                        "text": "SSD"
+                      },
+                      "4": {
+                        "index": 4,
+                        "text": "NL_SAS"
+                      },
+                      "5": {
+                        "index": 5,
+                        "text": "SLC SSD"
+                      },
+                      "6": {
+                        "index": 6,
+                        "text": "MLC SSD"
+                      },
+                      "7": {
+                        "index": 7,
+                        "text": "FC_SED"
+                      },
+                      "8": {
+                        "index": 8,
+                        "text": "SAS_SED"
+                      },
+                      "9": {
+                        "index": 9,
+                        "text": "SATA_SED"
+                      },
+                      "10": {
+                        "index": 10,
+                        "text": "SSD_SED"
+                      },
+                      "11": {
+                        "index": 11,
+                        "text": "NL_SAS_SED"
+                      },
+                      "12": {
+                        "index": 12,
+                        "text": "SLC_SSD_SED"
+                      },
+                      "13": {
+                        "index": 13,
+                        "text": "MLC_SSD_SED"
+                      },
+                      "14": {
+                        "index": 14,
+                        "text": "NVMe SSD"
+                      },
+                      "15": {
+                        "index": 15,
+                        "text": "SMR_SATA"
+                      },
+                      "16": {
+                        "index": 16,
+                        "text": "NVMe_SSD_SED"
+                      },
+                      "17": {
+                        "index": 17,
+                        "text": "SCM_SSD"
+                      },
+                      "18": {
+                        "index": 18,
+                        "text": "SCM_SED"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "DIsk ID"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 229
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Capacity"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 207
+              },
+              {
+                "id": "unit",
+                "value": "mbytes"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Temperature"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "celsius"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Used apacity"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "mbytes"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Temperature"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "continuous-GrYlRd"
+                }
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "applyToRow": false,
+                  "type": "color-background",
+                  "wrapText": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 16,
+        "x": 8,
+        "y": 1
+      },
+      "id": 7,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": [],
+          "reducer": [
+            "lastNotNull"
+          ],
+          "show": false
+        },
+        "frameIndex": 0,
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "hwInfoDiskManufacturer"
+          }
+        ]
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoDiskType{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoDiskHealthStatus{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoDiskRunTime{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoDiskCapacity{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoDiskTemperature{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoDiskCapacityUsage{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "F"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoDiskLocation{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "G"
+        }
+      ],
+      "title": "Disks",
+      "transformations": [
+        {
+          "id": "concatenate",
+          "options": {
+            "frameNameLabel": "frame",
+            "frameNameMode": "label"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value #E": false,
+              "Value #G": true,
+              "__name__ 1": true,
+              "__name__ 2": true,
+              "__name__ 3": true,
+              "__name__ 4": true,
+              "__name__ 5": true,
+              "__name__ 6": true,
+              "__name__ 7": true,
+              "hostname 1": true,
+              "hostname 2": true,
+              "hostname 3": true,
+              "hostname 4": true,
+              "hostname 5": true,
+              "hostname 6": true,
+              "hostname 7": true,
+              "hwInfoDiskID 1": true,
+              "hwInfoDiskID 2": true,
+              "hwInfoDiskID 3": true,
+              "hwInfoDiskID 4": true,
+              "hwInfoDiskID 5": true,
+              "hwInfoDiskID 6": true,
+              "hwInfoDiskID 7": true,
+              "hwInfoDiskManufacturer": false,
+              "instance 1": true,
+              "instance 2": true,
+              "instance 3": true,
+              "instance 4": true,
+              "instance 5": true,
+              "instance 6": true,
+              "instance 7": true,
+              "job 1": true,
+              "job 2": true,
+              "job 3": true,
+              "job 4": true,
+              "job 5": true,
+              "job 6": true,
+              "job 7": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Time": 38,
+              "Value #A": 6,
+              "Value #B": 12,
+              "Value #C": 18,
+              "Value #D": 25,
+              "Value #E": 31,
+              "Value #F": 24,
+              "Value #G": 49,
+              "__name__ 1": 1,
+              "__name__ 2": 7,
+              "__name__ 3": 13,
+              "__name__ 4": 19,
+              "__name__ 5": 26,
+              "__name__ 6": 39,
+              "__name__ 7": 44,
+              "hostname 1": 2,
+              "hostname 2": 8,
+              "hostname 3": 14,
+              "hostname 4": 20,
+              "hostname 5": 27,
+              "hostname 6": 40,
+              "hostname 7": 45,
+              "hwInfoDiskID 1": 3,
+              "hwInfoDiskID 2": 9,
+              "hwInfoDiskID 3": 15,
+              "hwInfoDiskID 4": 21,
+              "hwInfoDiskID 5": 28,
+              "hwInfoDiskID 6": 41,
+              "hwInfoDiskID 7": 46,
+              "hwInfoDiskLocation": 0,
+              "instance 1": 4,
+              "instance 2": 10,
+              "instance 3": 16,
+              "instance 4": 22,
+              "instance 5": 29,
+              "instance 6": 42,
+              "instance 7": 47,
+              "job 1": 5,
+              "job 2": 11,
+              "job 3": 17,
+              "job 4": 23,
+              "job 5": 30,
+              "job 6": 43,
+              "job 7": 48
+            },
+            "renameByName": {
+              "Time": "",
+              "Value #A": "Disk Type",
+              "Value #B": "Disk Status",
+              "Value #C": "days started",
+              "Value #D": "Capacity",
+              "Value #E": "Temperature",
+              "Value #F": "Used apacity",
+              "hwInfoDiskID 1": "DIsk ID",
+              "hwInfoDiskLocation": "Disk Location",
+              "hwInfoDiskManufacturer": "Vendor"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 0,
+        "y": 8
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "deviceId{instance=\"$instance\"}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "SN: {{deviceId}} ",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "deviceId{instance=\"$instance\"}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": " HOSTNAME: {{hostname}}",
+          "range": true,
+          "refId": "B",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "deviceId{instance=\"$instance\"}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "IP {{instance}}",
+          "range": true,
+          "refId": "C",
+          "useBackend": false
+        }
+      ],
+      "title": "basic information",
+      "transformations": [
+        {
+          "id": "partitionByValues",
+          "options": {}
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "819": {
+                  "index": 0,
+                  "text": "OceanStor Dorado 3000 V6"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 4,
+        "y": 8
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "deviceType{instance='$instance'}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Model name",
+      "transformations": [
+        {
+          "id": "partitionByValues",
+          "options": {}
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": false,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value #A"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "1": {
+                        "index": 0,
+                        "text": "OK"
+                      },
+                      "2": {
+                        "index": 1,
+                        "text": "Fault"
+                      },
+                      "3": {
+                        "index": 2,
+                        "text": "Pre-Fail"
+                      },
+                      "4": {
+                        "index": 3,
+                        "text": "Partially Broken"
+                      },
+                      "5": {
+                        "index": 4,
+                        "text": "Degraded"
+                      },
+                      "6": {
+                        "index": 5,
+                        "text": "Bad Sectors Found"
+                      },
+                      "7": {
+                        "index": 6,
+                        "text": "Bit Errors Found"
+                      },
+                      "8": {
+                        "index": 7,
+                        "text": "Consistent"
+                      },
+                      "9": {
+                        "index": 8,
+                        "text": "Inconsistent"
+                      },
+                      "10": {
+                        "index": 9,
+                        "text": "Busy"
+                      },
+                      "11": {
+                        "index": 10,
+                        "text": "No Input"
+                      },
+                      "12": {
+                        "index": 11,
+                        "text": "Low Battery"
+                      },
+                      "13": {
+                        "index": 12,
+                        "text": "Single Link Fault"
+                      },
+                      "14": {
+                        "index": 13,
+                        "text": "Invalid"
+                      },
+                      "15": {
+                        "index": 14,
+                        "text": "Write Protect"
+                      },
+                      "16": {
+                        "index": 15,
+                        "text": "single link"
+                      },
+                      "17": {
+                        "index": 16,
+                        "text": "No Redundant Link"
+                      },
+                      "18": {
+                        "index": 17,
+                        "text": "Offline"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "applyToRow": false,
+                  "mode": "gradient",
+                  "type": "color-background",
+                  "wrapText": false
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 1
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 2
+                    },
+                    {
+                      "color": "light-red",
+                      "value": 3
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 8
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 9
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 15
+                    },
+                    {
+                      "color": "green",
+                      "value": 16
+                    },
+                    {
+                      "color": "semi-dark-orange",
+                      "value": 17
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Running status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "1": {
+                        "index": 1,
+                        "text": "Normal"
+                      },
+                      "2": {
+                        "index": 2,
+                        "text": "Running"
+                      },
+                      "3": {
+                        "index": 3,
+                        "text": "Not running"
+                      },
+                      "4": {
+                        "index": 4,
+                        "text": "Not existed"
+                      },
+                      "5": {
+                        "index": 5,
+                        "text": "Sleep in high temperature"
+                      },
+                      "6": {
+                        "index": 6,
+                        "text": "Starting"
+                      },
+                      "7": {
+                        "index": 7,
+                        "text": "Power failure protection"
+                      },
+                      "8": {
+                        "index": 8,
+                        "text": "Spin down"
+                      },
+                      "9": {
+                        "index": 9,
+                        "text": "Started"
+                      },
+                      "10": {
+                        "index": 10,
+                        "text": "Link Up"
+                      },
+                      "11": {
+                        "index": 11,
+                        "text": "Link Down"
+                      },
+                      "12": {
+                        "index": 12,
+                        "text": "Powering on"
+                      },
+                      "13": {
+                        "index": 13,
+                        "text": "Powered off"
+                      },
+                      "14": {
+                        "index": 14,
+                        "text": "Pre-copy"
+                      },
+                      "15": {
+                        "index": 15,
+                        "text": "Copyback"
+                      },
+                      "16": {
+                        "index": 16,
+                        "text": "Reconstruction"
+                      },
+                      "17": {
+                        "index": 17,
+                        "text": "Expansion"
+                      },
+                      "18": {
+                        "index": 18,
+                        "text": "Unformatted"
+                      },
+                      "19": {
+                        "index": 19,
+                        "text": "Formatting"
+                      },
+                      "20": {
+                        "index": 20,
+                        "text": "Unmapped"
+                      },
+                      "24": {
+                        "index": 24,
+                        "text": "Synchronized"
+                      },
+                      "25": {
+                        "index": 25,
+                        "text": "Unsynchronized"
+                      },
+                      "26": {
+                        "index": 26,
+                        "text": "Split"
+                      },
+                      "27": {
+                        "index": 27,
+                        "text": "Online"
+                      },
+                      "28": {
+                        "index": 28,
+                        "text": "Offline"
+                      },
+                      "29": {
+                        "index": 29,
+                        "text": "Locked"
+                      },
+                      "30": {
+                        "index": 30,
+                        "text": "Enabled"
+                      },
+                      "31": {
+                        "index": 31,
+                        "text": "Disabled"
+                      },
+                      "32": {
+                        "index": 32,
+                        "text": "Balancing"
+                      },
+                      "33": {
+                        "index": 33,
+                        "text": "To be recovered"
+                      },
+                      "34": {
+                        "index": 34,
+                        "text": "Interrupted"
+                      },
+                      "35": {
+                        "index": 35,
+                        "text": "Invalid"
+                      },
+                      "36": {
+                        "index": 36,
+                        "text": "Not start"
+                      },
+                      "37": {
+                        "index": 37,
+                        "text": "Queuing"
+                      },
+                      "38": {
+                        "index": 38,
+                        "text": "Stopped"
+                      },
+                      "39": {
+                        "index": 39,
+                        "text": "Copying"
+                      },
+                      "40": {
+                        "index": 40,
+                        "text": "Completed"
+                      },
+                      "41": {
+                        "index": 41,
+                        "text": "Paused"
+                      },
+                      "42": {
+                        "index": 42,
+                        "text": "Reverse synchronizing"
+                      },
+                      "43": {
+                        "index": 43,
+                        "text": "Activated"
+                      },
+                      "44": {
+                        "index": 44,
+                        "text": "Restore"
+                      },
+                      "45": {
+                        "index": 45,
+                        "text": "Inactive"
+                      },
+                      "46": {
+                        "index": 46,
+                        "text": "Idle"
+                      },
+                      "47": {
+                        "index": 47,
+                        "text": "Powering off"
+                      },
+                      "48": {
+                        "index": 48,
+                        "text": "Charging"
+                      },
+                      "49": {
+                        "index": 49,
+                        "text": "Charging"
+                      },
+                      "50": {
+                        "index": 50,
+                        "text": "Discharging"
+                      },
+                      "51": {
+                        "index": 51,
+                        "text": "Upgrading"
+                      },
+                      "52": {
+                        "index": 52,
+                        "text": "Power Lost"
+                      },
+                      "53": {
+                        "index": 53,
+                        "text": "Initializing"
+                      },
+                      "54": {
+                        "index": 54,
+                        "text": "Apply change"
+                      },
+                      "55": {
+                        "index": 55,
+                        "text": "Online disable"
+                      },
+                      "56": {
+                        "index": 56,
+                        "text": "Offline disable"
+                      },
+                      "57": {
+                        "index": 57,
+                        "text": "Online frozen"
+                      },
+                      "58": {
+                        "index": 58,
+                        "text": "Offline frozen"
+                      },
+                      "59": {
+                        "index": 59,
+                        "text": "Closed"
+                      },
+                      "60": {
+                        "index": 60,
+                        "text": "Removing"
+                      },
+                      "61": {
+                        "index": 61,
+                        "text": "In service"
+                      },
+                      "62": {
+                        "index": 62,
+                        "text": "Out of service"
+                      },
+                      "63": {
+                        "index": 63,
+                        "text": "Running normal"
+                      },
+                      "64": {
+                        "index": 64,
+                        "text": "Running fail"
+                      },
+                      "65": {
+                        "index": 65,
+                        "text": "Running success"
+                      },
+                      "66": {
+                        "index": 66,
+                        "text": "Running success"
+                      },
+                      "67": {
+                        "index": 67,
+                        "text": "Running failed"
+                      },
+                      "68": {
+                        "index": 68,
+                        "text": "Waiting"
+                      },
+                      "72": {
+                        "index": 72,
+                        "text": "Synchronizing data"
+                      },
+                      "73": {
+                        "index": 73,
+                        "text": "Failed to synchronize"
+                      },
+                      "74": {
+                        "index": 74,
+                        "text": "Fault"
+                      },
+                      "75": {
+                        "index": 75,
+                        "text": "Migrating"
+                      },
+                      "76": {
+                        "index": 76,
+                        "text": "Migrated"
+                      },
+                      "77": {
+                        "index": 77,
+                        "text": "Activating"
+                      },
+                      "78": {
+                        "index": 78,
+                        "text": "Deactivating"
+                      },
+                      "79": {
+                        "index": 79,
+                        "text": "Start failed"
+                      },
+                      "80": {
+                        "index": 80,
+                        "text": "Stop failed"
+                      },
+                      "81": {
+                        "index": 81,
+                        "text": "Decommissioning"
+                      },
+                      "82": {
+                        "index": 82,
+                        "text": "Decommissioned"
+                      },
+                      "83": {
+                        "index": 83,
+                        "text": "Recommissioning"
+                      },
+                      "84": {
+                        "index": 84,
+                        "text": "Replacing node"
+                      },
+                      "85": {
+                        "index": 85,
+                        "text": "Scheduling"
+                      },
+                      "86": {
+                        "index": 86,
+                        "text": "Pausing"
+                      },
+                      "87": {
+                        "index": 87,
+                        "text": "Suspending"
+                      },
+                      "88": {
+                        "index": 88,
+                        "text": "Suspended"
+                      },
+                      "89": {
+                        "index": 89,
+                        "text": "Overload"
+                      },
+                      "90": {
+                        "index": 90,
+                        "text": "To be switch"
+                      },
+                      "91": {
+                        "index": 91,
+                        "text": "Switching"
+                      },
+                      "92": {
+                        "index": 92,
+                        "text": "To be cleanup"
+                      },
+                      "93": {
+                        "index": 93,
+                        "text": "Forced start"
+                      },
+                      "94": {
+                        "index": 94,
+                        "text": "Error"
+                      },
+                      "95": {
+                        "index": 95,
+                        "text": "Job completed"
+                      },
+                      "96": {
+                        "index": 96,
+                        "text": "Partition Migrating"
+                      },
+                      "97": {
+                        "index": 97,
+                        "text": "Mount"
+                      },
+                      "98": {
+                        "index": 98,
+                        "text": "Umount"
+                      },
+                      "99": {
+                        "index": 99,
+                        "text": "INSTALLING"
+                      },
+                      "100": {
+                        "index": 100,
+                        "text": "To Be Synchronized"
+                      },
+                      "101": {
+                        "index": 101,
+                        "text": "Connecting"
+                      },
+                      "102": {
+                        "index": 102,
+                        "text": "Service Switching"
+                      },
+                      "103": {
+                        "index": 103,
+                        "text": "Power-on failed"
+                      },
+                      "104": {
+                        "index": 104,
+                        "text": "REPAIRING"
+                      },
+                      "105": {
+                        "index": 105,
+                        "text": "abnormal"
+                      },
+                      "106": {
+                        "index": 106,
+                        "text": "Deleting"
+                      },
+                      "107": {
+                        "index": 107,
+                        "text": "Modifying"
+                      },
+                      "108": {
+                        "index": 108,
+                        "text": "Running (clearing data)"
+                      },
+                      "109": {
+                        "index": 109,
+                        "text": "Running (synchronizing data)"
+                      },
+                      "110": {
+                        "index": 110,
+                        "text": "Standby"
+                      },
+                      "111": {
+                        "index": 111,
+                        "text": "STOPPING"
+                      },
+                      "112": {
+                        "index": 112,
+                        "text": "RESTORE FAULT"
+                      },
+                      "113": {
+                        "index": 113,
+                        "text": "Cut Over"
+                      },
+                      "114": {
+                        "index": 114,
+                        "text": "Erasing"
+                      },
+                      "115": {
+                        "index": 115,
+                        "text": "Verifying"
+                      },
+                      "119": {
+                        "index": 119,
+                        "text": "Creating"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "applyToRow": false,
+                  "mode": "gradient",
+                  "type": "color-background",
+                  "wrapText": false
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 2
+                    },
+                    {
+                      "color": "super-light-blue",
+                      "value": 3
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 10
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 11
+                    },
+                    {
+                      "color": "super-light-blue",
+                      "value": 12
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Port Type"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "0": {
+                        "index": 0,
+                        "text": "Host Port"
+                      },
+                      "1": {
+                        "index": 1,
+                        "text": "Expansion Port"
+                      },
+                      "2": {
+                        "index": 2,
+                        "text": "Management Port"
+                      },
+                      "3": {
+                        "index": 3,
+                        "text": "Inner Port"
+                      },
+                      "4": {
+                        "index": 4,
+                        "text": "Maintenance Port"
+                      },
+                      "5": {
+                        "index": 5,
+                        "text": "Management/Host Port"
+                      },
+                      "6": {
+                        "index": 6,
+                        "text": "Maintenance/Host Port"
+                      },
+                      "7": {
+                        "index": 7,
+                        "text": "Backup MGR Port/Host Port"
+                      },
+                      "8": {
+                        "index": 8,
+                        "text": "Product Storage Port"
+                      },
+                      "9": {
+                        "index": 9,
+                        "text": "Backup Storage Port"
+                      },
+                      "10": {
+                        "index": 10,
+                        "text": "ETH NOT Config Port"
+                      },
+                      "11": {
+                        "index": 11,
+                        "text": "IP Scale Out"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 16,
+        "x": 8,
+        "y": 9
+      },
+      "id": 8,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": [],
+          "reducer": [
+            "lastNotNull"
+          ],
+          "show": false
+        },
+        "frameIndex": 0,
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "hwPerfPortName"
+          }
+        ]
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwPerfPortDelay{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoPortEthHealthStatus{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoPortEthLostPackages{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoPortEthRunningStatus{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoPortEthType{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "F"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwPerfPortLocation{instance='$instance'}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "D"
+        }
+      ],
+      "title": "Ports",
+      "transformations": [
+        {
+          "id": "concatenate",
+          "options": {
+            "frameNameLabel": "frame",
+            "frameNameMode": "label"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value #D": true,
+              "Value #E": false,
+              "__name__ 1": true,
+              "__name__ 2": true,
+              "__name__ 3": true,
+              "__name__ 4": true,
+              "__name__ 5": true,
+              "__name__ 6": true,
+              "hostname 1": true,
+              "hostname 2": true,
+              "hostname 3": true,
+              "hostname 4": true,
+              "hostname 5": true,
+              "hostname 6": true,
+              "hwInfoDiskID 1": false,
+              "hwInfoDiskID 2": true,
+              "hwInfoDiskID 3": true,
+              "hwInfoDiskID 4": true,
+              "hwInfoDiskID 5": true,
+              "hwInfoDiskManufacturer": false,
+              "hwInfoPortEthID 1": true,
+              "hwInfoPortEthID 2": true,
+              "hwInfoPortEthID 3": true,
+              "hwInfoPortEthID 4": true,
+              "hwInfoPortEthID 5": true,
+              "hwPerfPortIfIndex": true,
+              "hwPerfPortObjectId": true,
+              "instance": true,
+              "instance 1": true,
+              "instance 2": true,
+              "instance 3": true,
+              "instance 4": true,
+              "instance 5": true,
+              "instance 6": true,
+              "job": true,
+              "job 1": true,
+              "job 2": true,
+              "job 3": true,
+              "job 4": true,
+              "job 5": true,
+              "job 6": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Time": 11,
+              "Value #A": 16,
+              "Value #B": 25,
+              "Value #C": 31,
+              "Value #D": 44,
+              "Value #E": 5,
+              "Value #F": 37,
+              "__name__ 1": 1,
+              "__name__ 2": 12,
+              "__name__ 3": 20,
+              "__name__ 4": 26,
+              "__name__ 5": 32,
+              "__name__ 6": 38,
+              "hostname 1": 2,
+              "hostname 2": 13,
+              "hostname 3": 21,
+              "hostname 4": 27,
+              "hostname 5": 33,
+              "hostname 6": 39,
+              "hwInfoPortEthID 1": 19,
+              "hwInfoPortEthID 2": 22,
+              "hwInfoPortEthID 3": 28,
+              "hwInfoPortEthID 4": 34,
+              "hwPerfPortIfIndex 1": 17,
+              "hwPerfPortIfIndex 2": 40,
+              "hwPerfPortLocation": 0,
+              "hwPerfPortObjectId 1": 18,
+              "hwPerfPortObjectId 2": 41,
+              "instance 1": 3,
+              "instance 2": 14,
+              "instance 3": 23,
+              "instance 4": 29,
+              "instance 5": 35,
+              "instance 6": 42,
+              "job 1": 4,
+              "job 2": 15,
+              "job 3": 24,
+              "job 4": 30,
+              "job 5": 36,
+              "job 6": 43
+            },
+            "renameByName": {
+              "Time": "",
+              "Value": "I/O delay",
+              "Value #A": "Port Status",
+              "Value #B": "Lost packages",
+              "Value #C": "Running status",
+              "Value #D": "Capacity",
+              "Value #E": "I/O Delay",
+              "Value #F": "Port Type",
+              "hwInfoDiskID 1": "DIsk ID",
+              "hwInfoDiskManufacturer": "Vendor",
+              "hwPerfPortLocation": "Port Location",
+              "job 4": ""
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "#EAB839",
+                "value": 15000000
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 20000010
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 28000009
+              }
+            ]
+          },
+          "unit": "decmbytes"
+        },
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "{__name__=\"totalCapacity\", hostname=\"spb-fil-stor01\", instance=\"10.78.201.202\", job=\"snmp-dorado\"}"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": []
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 13
+      },
+      "id": 3,
+      "options": {
+        "displayMode": "lcd",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "text"
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "usedCapacity{instance='$instance'}",
+          "legendFormat": "Used Capacity",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "totalCapacity{instance='$instance'}",
+          "hide": false,
+          "legendFormat": "Total Capacity",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Capacity",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-red",
+                "value": 2
+              },
+              {
+                "color": "light-red",
+                "value": 3
+              },
+              {
+                "color": "dark-green",
+                "value": 8
+              },
+              {
+                "color": "yellow",
+                "value": 9
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 15
+              },
+              {
+                "color": "green",
+                "value": 16
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 17
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value #B"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "0": {
+                        "index": 0,
+                        "text": "normal"
+                      },
+                      "1": {
+                        "index": 1,
+                        "text": "master"
+                      },
+                      "2": {
+                        "index": 2,
+                        "text": "slave"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "1": {
+                        "index": 0,
+                        "text": "OK"
+                      },
+                      "2": {
+                        "index": 1,
+                        "text": "Fault"
+                      },
+                      "3": {
+                        "index": 2,
+                        "text": "Pre-Fail"
+                      },
+                      "4": {
+                        "index": 3,
+                        "text": "Partially Broken"
+                      },
+                      "5": {
+                        "index": 4,
+                        "text": "Degraded"
+                      },
+                      "6": {
+                        "index": 5,
+                        "text": "Bad Sectors Found"
+                      },
+                      "7": {
+                        "index": 6,
+                        "text": "Bit Errors Found"
+                      },
+                      "8": {
+                        "index": 7,
+                        "text": "Consistent"
+                      },
+                      "9": {
+                        "index": 8,
+                        "text": "Inconsistent"
+                      },
+                      "10": {
+                        "index": 9,
+                        "text": "Busy"
+                      },
+                      "11": {
+                        "index": 10,
+                        "text": "No Input"
+                      },
+                      "12": {
+                        "index": 11,
+                        "text": "Low Battery"
+                      },
+                      "13": {
+                        "index": 12,
+                        "text": "Single Link Fault"
+                      },
+                      "14": {
+                        "index": 13,
+                        "text": "Invalid"
+                      },
+                      "15": {
+                        "index": 14,
+                        "text": "Write Protect"
+                      },
+                      "16": {
+                        "index": 15,
+                        "text": "single link"
+                      },
+                      "17": {
+                        "index": 16,
+                        "text": "No Redundant Link"
+                      },
+                      "18": {
+                        "index": 17,
+                        "text": "Offline"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 143
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "applyToRow": false,
+                  "mode": "gradient",
+                  "type": "color-background",
+                  "wrapText": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 0,
+        "y": 21
+      },
+      "id": 6,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoControllerHealthStatus{instance='$instance'}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "hwInfoControllerRole{instance='$instance'}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "B",
+          "useBackend": false
+        }
+      ],
+      "title": "Status controllers",
+      "transformations": [
+        {
+          "id": "concatenate",
+          "options": {
+            "frameNameLabel": "frame",
+            "frameNameMode": "label"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "__name__ 1": true,
+              "__name__ 2": true,
+              "hostname 1": true,
+              "hostname 2": true,
+              "hwInfoControllerID 2": true,
+              "instance 1": true,
+              "instance 2": true,
+              "job 1": true,
+              "job 2": true
+            },
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Value #A": "status",
+              "Value #B": "role"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 16,
+      "panels": [],
+      "title": "Usage",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 100,
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 0,
+        "y": 27
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "hwInfoControllerCPUUsage{instance=\"$instance\"}",
+          "legendFormat": "CTE{{hwInfoControllerID}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "CPU Usage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 100,
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsZero",
+                "value": 0
+              }
+            },
+            "properties": []
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 13,
+        "x": 11,
+        "y": 27
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "hwInfoControllerMemoryUsage{instance=\"$instance\"}",
+          "legendFormat": "CTE{{hwInfoControllerID}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Memory Usage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 11,
+        "x": 0,
+        "y": 35
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "sum(hwPerfPortReadTraffic{instance='$instance'})",
+          "hide": false,
+          "legendFormat": "Total",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "hwPerfPortReadTraffic{instance='$instance'} * on(hwPerfPortObjectId) group_left(hwPerfPortLocation) (hwPerfPortLocation != 0)",
+          "hide": false,
+          "legendFormat": "{{hwPerfPortLocation}}",
+          "range": true,
+          "refId": "C"
+        }
+      ],
+      "title": "Port read traffic",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 13,
+        "x": 11,
+        "y": 35
+      },
+      "id": 13,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "sum(hwPerfPortWriteTraffic{instance='$instance'})",
+          "hide": false,
+          "legendFormat": "Total",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "editorMode": "code",
+          "expr": "hwPerfPortWriteTraffic{instance='$instance'} * on(hwPerfPortObjectId) group_left(hwPerfPortLocation) (hwPerfPortLocation != 0)",
+          "legendFormat": "{{hwPerfPortLocation}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Port Write traffic",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 42
+      },
+      "id": 12,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "sum(hwPerfNodeTotalIOPS{instance='$instance'})",
+          "hide": false,
+          "legendFormat": "Total for all node",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "hwPerfNodeTotalIOPS{instance='$instance'}",
+          "hide": false,
+          "legendFormat": "Total for node {{hwPerfNodeIfIndex}}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "TOTAL IOPS",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 42
+      },
+      "id": 17,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "sum(hwPerfNodeWriteIOPS{instance='$instance'})",
+          "hide": false,
+          "legendFormat": "Write for node all node",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "hwPerfNodeWriteIOPS{instance='$instance'}",
+          "hide": false,
+          "legendFormat": "Write for node {{hwPerfNodeIfIndex}}",
+          "range": true,
+          "refId": "C"
+        }
+      ],
+      "title": "Write IOPS",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "beepfpnvwo5xcd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 42
+      },
+      "id": 18,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "beepfpnvwo5xcd"
+          },
+          "editorMode": "code",
+          "expr": "sum(hwPerfNodeReadIOPS{instance='$instance'})",
+          "hide": false,
+          "legendFormat": "Read for node all node",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "editorMode": "code",
+          "expr": "hwPerfNodeReadIOPS{instance='$instance'}",
+          "legendFormat": "Read for node {{hwPerfNodeIfIndex}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Read IOPS",
+      "type": "timeseries"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "10.78.201.202",
+          "value": "10.78.201.202"
+        },
+        "definition": "label_values({job=\"snmp-dorado\"},instance)",
+        "label": "instance",
+        "name": "instance",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values({job=\"snmp-dorado\"},instance)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Huawei Dorado",
+  "uid": "6beee274-0d00-42dc-a02e-8b8bb8d9de34",
+  "version": 63
+}
